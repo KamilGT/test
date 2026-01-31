@@ -64,123 +64,47 @@
             color: var(--primary-color);
         }
 
-        /* --- Обновленный Первый Экран (Full Screen) --- */
-        .hero-section {
-            /* 1. Занимаем 95% высоты экрана (почти весь экран) */
-            min-height: 95vh;
-            
-            /* 2. Центрируем контент по вертикали */
-            display: flex;
-            align-items: center; 
-            
-            /* 3. Фон и отступы */
+        /* --- Первый экран (Hero) --- */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
             background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-            padding: 20px 0; /* Минимальные отступы, чтобы не прилипало на маленьких экранах */
-            position: relative;
-        }
-
-        .hero-wrapper {
+            min-height: 80vh;
             display: flex;
-            align-items: center; 
-            justify-content: space-between;
-            gap: 60px; /* Чуть больше воздуха между текстом и фото */
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Левая часть с текстом */
-        .hero-text {
-            flex: 1;
-            max-width: 600px;
-            /* Сдвигаем текст чуть выше визуального центра для красоты */
-            margin-top: -20px; 
-        }
-
-        .hero-text h1 {
-            font-size: 3rem; 
-            line-height: 1.1;
-            margin-bottom: 25px;
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
             color: var(--primary-color);
+            line-height: 1.1;
         }
 
-        .hero-description {
-            font-size: 1.15rem;
-            color: #555;
-            margin-bottom: 40px;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 20px;
-            line-height: 1.6;
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: #666;
         }
 
-        .hero-badges {
+        /* --- Блок "О мастере" --- */
+        .about {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .about-content {
             display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-            font-size: 0.85rem;
-            color: #777;
-            flex-wrap: wrap;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-        .hero-badge {
-            background: #fff;
-            padding: 8px 15px;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            align-items: center;
+            gap: 50px;
         }
 
-        /* Правая часть с фото */
-        .hero-image-block {
+        .about-photo {
             flex: 1;
-            max-width: 450px;
-            position: relative;
+            min-width: 300px;
         }
-
-        .hero-image-block img {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 25px 25px 0px rgba(197, 168, 128, 0.25);
-            object-fit: cover;
-            /* Добавим легкую анимацию появления */
-            animation: fadeIn 1.5s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- Адаптивность --- */
-        @media (max-width: 900px) {
-            .hero-section {
-                min-height: auto; /* На телефоне высота автоматическая */
-                padding: 100px 0 60px; /* Отступ сверху больше, чтобы не прилипало к краю */
-            }
-            
-            .hero-wrapper {
-                flex-direction: column-reverse; /* Фото сверху */
-                text-align: center;
-                gap: 30px;
-            }
-            
-            .hero-text {
-                margin-top: 0;
-            }
-            
-            .hero-description {
-                border-left: none;
-                padding-left: 0;
-            }
-            
-            .hero-badges {
-                justify-content: center;
-            }
-            
-            .hero-image-block {
-                max-width: 320px;
-            }
-        }
-
-
 
         /* Место под ваше фото */
         .photo-placeholder {
@@ -190,10 +114,12 @@
             border-radius: 10px;
             position: relative;
             overflow: hidden;
-            background-image: url('photo_0.jpg');
+            background-image: url('https://placehold.co/400x500/C5A880/FFFFFF?text=Фото+Ильверы'); /* Заглушка */
             background-size: cover;
             background-position: center;
         }
+        
+        /* ВАЖНО: Удалите .photo-placeholder выше и используйте реальный <img> когда будет фото */
         
         .about-text {
             flex: 1;
@@ -232,7 +158,7 @@
 
         /* --- Услуги --- */
         .services {
-            padding: 60px 0 80px;
+            padding: 80px 0;
             background-color: var(--bg-light);
         }
 
@@ -374,25 +300,25 @@
 
         /* --- Правая часть: Панель просмотра (Сайдбар) --- */
         .review-preview-panel {
-            width: 280px;
-            flex-shrink: 0;
+            width: 280px; /* Фиксированная ширина (примерно 20-25% экрана) */
+            flex-shrink: 0; /* Запрещаем панели сжиматься */
+            
+            /* МАГИЯ: Панель "прилипает" при прокрутке */
             position: -webkit-sticky;
             position: sticky;
-            top: 20px;
+            top: 20px; /* Отступ сверху при прокрутке */
+            
             background: #fff;
             border: 1px solid #eee;
             border-radius: 12px;
             padding: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            
+            /* Скрываем, если ничего не выбрано (опционально) */
             opacity: 0; 
             visibility: hidden;
             transform: translateX(20px);
             transition: all 0.3s ease;
-            
-            /* Важно: расставляем элементы вертикально */
-            display: flex;
-            flex-direction: column;
-            max-height: 85vh; /* Ограничиваем высоту панели, чтобы не улетала */
         }
 
         .review-preview-panel.active {
@@ -401,47 +327,28 @@
             transform: translateX(0);
         }
 
-        /* --- НОВЫЙ КОНТЕЙНЕР ШАПКИ --- */
-        .preview-header {
-            display: flex; /* Магия: ставит фото и текст в ряд */
-            align-items: center; /* Выравнивает их по центру */
-            gap: 15px; /* Расстояние между фото и именем */
-            margin-bottom: 15px;
-            border-bottom: 1px solid #f0f0f0; /* Легкая линия-разделитель */
-            padding-bottom: 15px;
-            flex-shrink: 0; /* Шапка не сжимается */
-        }
-
-        /* Фото (Аватарка) */
         .preview-image {
-            width: 60px; /* Компактный размер */
-            height: 60px;
-            border-radius: 50%; /* Круг */
-            object-fit: cover;
-            object-position: top;
-            border: 2px solid var(--accent-color);
-            margin: 0; /* Убираем лишние отступы, теперь за них отвечает flex gap */
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* Имя клиента */
+        .preview-text {
+            font-size: 0.9rem;
+            color: #444;
+            max-height: 300px; /* Если текст длинный, будет скролл внутри панели */
+            overflow-y: auto;
+        }
+        
         .preview-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.2rem;
-            line-height: 1.1;
+            margin-bottom: 10px;
             color: var(--primary-color);
-            font-weight: 700;
-            margin: 0;
+            font-weight: bold;
         }
-
-        /* Текст */
-        .preview-text {
-            font-size: 0.95rem;
-            color: #444;
-            overflow-y: auto; /* Скролл только у текста */
-            flex-grow: 1; /* Текст занимает всё оставшееся место */
-            padding-right: 5px;
-        }
-
 
         .placeholder-text {
             /* Сообщение "Выберите отзыв" */
@@ -460,6 +367,9 @@
 
         /* --- Адаптивность для телефонов --- */
         @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about-content { flex-direction: column; }
+            .about-photo { width: 100%; }
 
             .reviews-wrapper {
                 flex-direction: column-reverse; /* На телефоне панель будет СВЕРХУ сетки */
@@ -482,40 +392,39 @@
 </head>
 <body>
 
-     <!-- Новый объединенный Первый Экран -->
-     <section class="hero-section">
+    <!-- Первый экран -->
+    <header class="hero">
         <div class="container">
-            <div class="hero-wrapper">
-                
-                <!-- ЛЕВАЯ КОЛОНКА: Текст -->
-                <div class="hero-text">
-                    <span class="subtitle">Ильвера Ситдикова</span>
-                    <h1>Раскрой свою внутреннюю силу</h1>
+            <h1>Раскрой свою внутреннюю силу</h1>
+            <p>Наставничество • Духовные практики • Исцеление души</p>
+            <a href="https://t.me/ILVERA69" class="btn">Записаться на сессию</a>
+        </div>
+    </header>
+
+    <!-- Блок "О мастере" -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-photo">
+                    <img src="photo_0.jpg" alt="Ильвера Ситдикова" style="width:100%; border-radius:10px;">
+                    <!-- <div class="photo-placeholder"></div> -->
+                </div>
+                <div class="about-text">
+                    <span class="subtitle">Давайте знакомиться</span>
+                    <h2>Я — Ильвера Ситдикова</h2>
+                    <p>Наставник, духовный проводник ченнелинга, целитель. Я проживаю суть Женского Близнецового Пламени.</p>
+                    <br>
+                    <p>Моя задача — помочь вам восстановить психоэмоциональное состояние и сбалансировать все сферы жизни. Я использую мощные, проверенные методы, которые раскроют ваши скрытые ресурсы.</p>
                     
-                    <div class="hero-badges">
-                        <span class="hero-badge">💎 Наставничество</span>
-                        <span class="hero-badge">🧘‍♀️ Духовные практики</span>
-                        <span class="hero-badge">🕯 Исцеление души</span>
-                    </div>
-
-                    <p class="hero-description">
-                        Я — духовный проводник ченнелинга и целитель. Проживаю суть Женского Близнецового Пламени.<br><br>
-                        Помогу восстановить состояние и сбалансировать сферы жизни. Готова шагнуть в трансформацию со мной?
-                    </p>
-
-                    <a href="https://t.me/ILVERA69" class="btn">Записаться на сессию</a>
+                    <ul class="about-list">
+                        <li>Проверенные авторские методики</li>
+                        <li>Офлайн и Онлайн формат</li>
+                        <li>Глубокая трансформация сознания</li>
+                    </ul>
                 </div>
-
-                <!-- ПРАВАЯ КОЛОНКА: Фото -->
-                <div class="hero-image-block">
-                    <!-- Ваше фото -->
-                    <img src="photo_0.jpg" alt="Ильвера Ситдикова">
-                </div>
-
             </div>
         </div>
     </section>
-
 
     <!-- Услуги -->
     <section class="services">
@@ -563,7 +472,7 @@
     <section class="reviews">
         <div class="reviews-container" style="max-width: 100%; margin: 0 auto; padding: 0 20px;">
             <h2 class="section-title">Стена доверия</h2>
-            <p style="text-align: center; margin-bottom: 30px; color: #666;">Нажмите на фото в галерее, чтобы прочитать подробности</p>
+            <p style="text-align: center; margin-bottom: 30px; color: #655;">Нажмите на фото, чтобы прочитать подробности</p>
             
             <div class="reviews-wrapper">
                 
@@ -581,20 +490,12 @@
 
                 <!-- Панель, которая появится при клике -->
                 <div class="review-preview-panel" id="previewPanel">
-                    
-                    <!-- НОВЫЙ КОНТЕЙНЕР-ШАПКА (Фото + Имя в одну строку) -->
-                    <div class="preview-header">
-                        <img src="" alt="" class="preview-image" id="previewImg">
-                        <div class="preview-title" id="previewTitle">Имя клиента</div>
-                    </div>
-                    
-                    <!-- Текст отзыва -->
+                    <div class="preview-title" id="previewTitle">Отзыв от Марии</div>
+                    <img src="" alt="" class="preview-image" id="previewImg">
                     <div class="preview-text" id="previewText">
                         Текст отзыва появится здесь...
                     </div>
-                    
                 </div>
-
 
             </div>
         </div>
