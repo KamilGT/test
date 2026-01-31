@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ильвера Ситдикова | Духовный наставник и целитель</title>
-    <!-- Подключаем красивые шрифты Google Fonts -->
+    <!-- Подключаем шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -64,7 +64,7 @@
             color: var(--primary-color);
         }
 
-        /* --- Обновленный Первый Экран (Full Screen) --- */
+        /* --- Первый Экран --- */
         .hero-section {
             min-height: 95vh;
             display: flex;
@@ -81,7 +81,6 @@
             gap: 60px;
         }
 
-        /* Левая часть с текстом */
         .hero-text {
             flex: 1;
             max-width: 600px;
@@ -114,6 +113,7 @@
             text-transform: uppercase;
             font-weight: 600;
         }
+
         .hero-badge {
             background: #fff;
             padding: 8px 15px;
@@ -121,7 +121,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        /* Правая часть с фото */
         .hero-image-block {
             flex: 1;
             max-width: 450px;
@@ -137,6 +136,11 @@
             animation: fadeIn 1.5s ease;
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .subtitle {
             color: var(--accent-color);
             font-weight: 600;
@@ -144,11 +148,6 @@
             letter-spacing: 2px;
             margin-bottom: 10px;
             display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         /* --- Услуги --- */
@@ -198,161 +197,59 @@
             font-size: 0.95rem;
         }
 
-        /* --- БЛОК ОТЗЫВОВ --- */
-        .reviews {
-            padding: 60px 0;
-            background-color: #fff;
+        /* --- Footer --- */
+        footer {
+            padding: 30px 0;
+            text-align: center;
+            background: #333;
+            color: #888;
+            font-size: 0.8rem;
         }
 
-        .reviews-header-block {
-            display: flex;
-            align-items: flex-start;
-            gap: 40px;
-            margin-bottom: 30px;
-            position: sticky; 
-            top: 0;
-            z-index: 10;
-            background: #fff;
-            padding: 20px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .header-left-title {
-            width: 30%;
-            flex-shrink: 0;
-        }
-
-        .header-left-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            line-height: 1.1;
-            margin-bottom: 10px;
-        }
-        
-        .header-left-title p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-         /* ПРАВАЯ ЧАСТЬ (Панель с отзывом и стрелками) */
-         .review-display-panel {
-            width: 70%;
-            background: #f9f9f9;
-            border-radius: 12px;
-            padding: 10px 15px; /* Чуть меньше отступы, чтобы влезли стрелки */
-            border: 1px solid #eee;
-            
-            display: flex;
-            align-items: center; /* Центрируем стрелки по вертикали */
-            gap: 15px;
-            transition: opacity 0.3s;
-        }
-
-        /* Кнопки-стрелки */
-        .nav-arrow {
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: var(--primary-color);
-            cursor: pointer;
-            padding: 0 10px;
-            opacity: 0.5;
-            transition: all 0.2s;
-            user-select: none; /* Чтобы не выделялись при клике */
-        }
-        .nav-arrow:hover {
-            opacity: 1;
-            transform: scale(1.2);
-            color: var(--accent-color);
-        }
-
-        /* Обертка для Аватарки и Текста (чтобы они стояли в центре между стрелками) */
-        .rd-inner-wrapper {
-            display: flex;
+        /* --- Галерея отзывов --- */
+        .reviews-wrapper {
+            display: flex; 
             align-items: flex-start;
             gap: 20px;
-            flex: 1; /* Занимает все место между стрелками */
+            position: relative;
         }
 
-        .rd-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: top;
-            border: 2px solid var(--accent-color);
-            flex-shrink: 0;
-            user-select: none; /* Чтобы не выделялись при клике */
-        }
-
-        .rd-content {
-            flex: 1;
-        }
-
-        .rd-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-        }
-
-        .rd-text {
-            font-size: 0.95rem;
-            color: #333;
-            max-height: 120px;
-            overflow-y: auto;
-            line-height: 1.5;
-        }
-
-        /* Адаптив: На телефоне стрелки делаем поменьше или переносим */
-        @media (max-width: 900px) {
-            .review-display-panel {
-                width: 100%;
-                padding: 15px 5px; /* Меньше отступы по краям */
-            }
-            .nav-arrow {
-                font-size: 1.5rem;
-                padding: 0 5px;
-            }
-            .rd-inner-wrapper {
-                gap: 10px;
-            }
-            .rd-avatar {
-                width: 60px;
-                height: 60px;
-            }
-        }
-
-
-        /* --- НИЖНЯЯ ЧАСТЬ (СЕТКА для 36 фото) --- */
+        /* Левая часть: Сетка миниатюр */
         .gallery-grid {
+            flex: 1;
             display: grid;
-            gap: 2px; /* Расстояние между фото */
-            
-            /* 1. КОМПЬЮТЕР: 9 колонок */
-            /* 36 / 9 = 4 ровных ряда */
             grid-template-columns: repeat(9, 1fr); 
+            gap: 2px;
+        }
+
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr); 
+            }
         }
 
         .gallery-item {
             aspect-ratio: 1 / 1;
             cursor: pointer;
+            border-radius: 4px;
             overflow: hidden;
-            opacity: 0.8; 
+            border: 2px solid transparent;
             transition: all 0.2s;
         }
 
         .gallery-item:hover {
-            opacity: 1;
-            transform: scale(1.05);
-            z-index: 2;
+            filter: brightness(0.9);
         }
 
         .gallery-item.active {
-            opacity: 1;
-            outline: 3px solid var(--accent-color);
-            z-index: 2;
+            border-color: var(--primary-color);
+            transform: scale(0.95);
         }
 
         .gallery-item img {
@@ -360,29 +257,92 @@
             height: 100%;
             object-fit: cover;
             object-position: top; 
+            display: block;
+            pointer-events: none;
         }
 
-        /* --- АДАПТИВНОСТЬ --- */
-
-        /* 2. ПЛАНШЕТЫ (меньше 1024px) */
-        @media (max-width: 1024px) {
-            .gallery-grid {
-                grid-template-columns: repeat(6, 1fr);
-            }
+        /* --- Правая часть: Панель просмотра (Сайдбар) --- */
+        .review-preview-panel {
+            width: 320px; /* Сделал чуть шире, чтобы скриншот хорошо читался */
+            flex-shrink: 0;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 20px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            opacity: 0; 
+            visibility: hidden;
+            transform: translateX(20px);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            max-height: 85vh; 
         }
 
-        /* 3. ТЕЛЕФОНЫ (меньше 768px) */
-        @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(4, 1fr); 
-            }
-            
-            /* На телефонах убираем прозрачность */
-            .gallery-item {
-                opacity: 1;
-            }
+        .review-preview-panel.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
         }
 
+        /* Шапка в панели (Аватар + Имя) */
+        .preview-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 15px;
+            flex-shrink: 0;
+        }
+
+        .preview-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+            border: 2px solid var(--accent-color);
+        }
+
+        .preview-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Скриншот отзыва */
+        .preview-screenshot-container {
+            flex: 1;
+            overflow-y: auto; /* Прокрутка, если скриншот длинный */
+            padding-right: 5px;
+            border-radius: 8px;
+        }
+
+        .preview-screenshot-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .placeholder-text {
+            position: absolute;
+            right: 0; top: 0; width: 320px; height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #999;
+            padding: 20px;
+            border: 2px dashed #eee;
+            border-radius: 12px;
+            background: #fff;
+        }
 
         /* --- CTA --- */
         .cta {
@@ -409,19 +369,10 @@
             border-color: var(--accent-color);
             color: var(--primary-color);
         }
-
+        
         .btn-light:hover {
             background-color: #fff;
             color: var(--primary-color);
-        }
-
-        /* --- Footer --- */
-        footer {
-            padding: 30px 0;
-            text-align: center;
-            background: #333;
-            color: #888;
-            font-size: 0.8rem;
         }
 
         /* --- Адаптивность --- */
@@ -439,13 +390,18 @@
             .hero-description { border-left: none; padding-left: 0; }
             .hero-badges { justify-content: center; }
             .hero-image-block { max-width: 320px; }
-            
-            .reviews-header-block {
-                flex-direction: column;
-                gap: 20px;
-                position: static;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-wrapper {
+                flex-direction: column-reverse;
             }
-            .header-left-title, .review-display-panel { width: 100%; }
+            .review-preview-panel, .placeholder-text {
+                width: 100%;
+                position: static;
+                margin-bottom: 20px;
+                height: 400px; /* Фиксируем высоту на телефоне для удобства */
+            }
         }
     </style>
 </head>
@@ -512,41 +468,38 @@
         </div>
     </section>
 
-    <!-- Отзывы -->
+    <!-- Блок Отзывы -->
     <section class="reviews">
-        <div class="container">
-            <!-- Верхняя панель -->
-            <div class="reviews-header-block">
-                <div class="header-left-title">
-                    <h2>Стена доверия</h2>
-                    <p>Нажмите на любое фото,<br>чтобы прочитать историю.</p>
+        <div class="reviews-container" style="max-width: 100%; margin: 0 auto; padding: 0 20px;">
+            <h2 class="section-title">Стена доверия</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">Нажмите на фото, чтобы открыть скриншот отзыва</p>
+            
+            <div class="reviews-wrapper">
+                <!-- 1. СЕТКА (Слева) -->
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- JS заполнит -->
                 </div>
 
-                <!-- Справа: Панель просмотра -->
-                <div class="review-display-panel" id="previewPanel">
-                    
-                    <!-- Стрелка ВЛЕВО -->
-                    <button class="nav-arrow" onclick="changeReview(-1)">&#10094;</button>
+                <!-- 2. БЛОК ПРОСМОТРА (Справа) -->
+                
+                <!-- Заглушка (пока не кликнули) -->
+                <div id="previewPlaceholder" class="placeholder-text">
+                    Нажмите на любую миниатюру,<br>чтобы прочитать отзыв
+                </div>
 
-                    <!-- Внутренний контейнер с контентом -->
-                    <div class="rd-inner-wrapper">
-                        <img src="" alt="" class="rd-avatar" id="previewImg">
-                        <div class="rd-content">
-                            <div class="rd-name" id="previewTitle">Загрузка...</div>
-                            <div class="rd-text" id="previewText">
-                                Выберите фото ниже, чтобы увидеть отзыв.
-                            </div>
-                        </div>
+                <!-- Панель со скриншотом -->
+                <div class="review-preview-panel" id="previewPanel">
+                    <div class="preview-header">
+                        <img src="" alt="" class="preview-image" id="previewAvatar">
+                        <div class="preview-title" id="previewTitle">Имя клиента</div>
                     </div>
-
-                    <!-- Стрелка ВПРАВО -->
-                    <button class="nav-arrow" onclick="changeReview(1)">&#10095;</button>
                     
+                    <!-- Вместо текста вставляем скриншот -->
+                    <div class="preview-screenshot-container">
+                        <img src="" alt="Скриншот отзыва" class="preview-screenshot-img" id="previewScreenshot">
+                    </div>
                 </div>
-
             </div>
-            <!-- Сетка -->
-            <div class="gallery-grid" id="galleryGrid"></div>
         </div>
     </section>
 
@@ -566,118 +519,113 @@
     </footer>
 
     <script>
-        // --- ВАШИ ОТЗЫВЫ ---
+        // Имена клиентов (если хотите, чтобы они совпадали). 
+        // Скриншоты будут браться по номеру ID: r1.jpeg, r2.jpeg...
         const reviewsData = [
-            { id: 1, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
-            { id: 2, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
-            { id: 3, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
-            { id: 4, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
-            { id: 5, name: "Виктория", text: "Спасибо за трансформацию!" },
-            { id: 6, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
-            { id: 7, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
-            { id: 8, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
-            { id: 9, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
-            { id: 10, name: "Виктория", text: "Спасибо за трансформацию!" },
-            { id: 11, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
-            { id: 12, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
-            { id: 13, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
-            { id: 14, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
-            { id: 15, name: "Виктория", text: "Спасибо за трансформацию!" },
-            { id: 16, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
-            { id: 17, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
-            { id: 18, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
-            { id: 19, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
-            { id: 20, name: "Виктория", text: "Спасибо за трансформацию!" },
-            { id: 21, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
-            { id: 22, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
-            { id: 23, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
-            { id: 24, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
-            { id: 25, name: "Виктория", text: "Спасибо за трансформацию!" },
-            { id: 26, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
-            { id: 27, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
-            { id: 28, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
-            { id: 29, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
-            { id: 30, name: "Виктория", text: "Спасибо за трансформацию!" },
-            { id: 31, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
-            { id: 32, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
-            { id: 33, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
-            { id: 34, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
-            { id: 35, name: "Виктория", text: "Спасибо за трансформацию!" },
-            { id: 36, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." }
+            { id: 1, name: "Мария, г. Уфа" },
+            { id: 2, name: "Елена, Москва" },
+            { id: 3, name: "Ольга, Казань" },
+            { id: 4, name: "Алина, С-Петербург" },
+            { id: 5, name: "Виктория, Самара" },
+            { id: 6, name: "Мария, г. Уфа"},
+            { id: 7, name: "Елена, Москва" },
+            { id: 8, name: "Ольга, Казань" },
+            { id: 9, name: "Алина, С-Петербург" },
+            { id: 10, name: "Виктория, Самара" },
+            { id: 11, name: "Мария, г. Уфа" },
+            { id: 12, name: "Елена, Москва" },
+            { id: 13, name: "Ольга, Казань" },
+            { id: 14, name: "Алина, С-Петербург" },
+            { id: 15, name: "Виктория, Самара" },
+            { id: 16, name: "Мария, г. Уфа"},
+            { id: 17, name: "Елена, Москва" },
+            { id: 18, name: "Ольга, Казань" },
+            { id: 19, name: "Алина, С-Петербург" },
+            { id: 20, name: "Виктория, Самара" },
+            { id: 21, name: "Мария, г. Уфа" },
+            { id: 22, name: "Елена, Москва" },
+            { id: 23, name: "Ольга, Казань" },
+            { id: 24, name: "Алина, С-Петербург" },
+            { id: 25, name: "Виктория, Самара" },
+            { id: 26, name: "Мария, г. Уфа"},
+            { id: 27, name: "Елена, Москва" },
+            { id: 28, name: "Ольга, Казань" },
+            { id: 29, name: "Алина, С-Петербург" },
+            { id: 30, name: "Виктория, Самара" },
+            { id: 31, name: "Мария, г. Уфа" },
+            { id: 32, name: "Елена, Москва" },
+            { id: 33, name: "Ольга, Казань" },
+            { id: 34, name: "Алина, С-Петербург" },
+            { id: 35, name: "Виктория, Самара" },
+            { id: 36, name: "Мария, г. Уфа"},
+            // Можно не заполнять все 36, скрипт поставит "Клиент №..." по умолчанию
         ];
-
-        // Глобальная переменная для отслеживания текущего отзыва
-        let currentReviewId = 1;
-        const totalPhotos = 36; // ВАЖНО: Убедитесь, что это число совпадает с вашим планом
 
         document.addEventListener("DOMContentLoaded", function() {
             const galleryGrid = document.getElementById('galleryGrid');
-            const previewImg = document.getElementById('previewImg');
-            const previewText = document.getElementById('previewText');
+            const previewPanel = document.getElementById('previewPanel');
+            const placeholder = document.getElementById('previewPlaceholder');
+            
+            const previewAvatar = document.getElementById('previewAvatar');
+            const previewScreenshot = document.getElementById('previewScreenshot');
             const previewTitle = document.getElementById('previewTitle');
+
+            const totalPhotos = 36; 
 
             // 1. ГЕНЕРАЦИЯ СЕТКИ
             for (let i = 1; i <= totalPhotos; i++) {
-                const data = reviewsData.find(item => item.id === i) || { name: "Отзыв клиента", text: "..." };
+                const data = reviewsData.find(item => item.id === i) || { name: `Клиент №${i}` };
+                
                 const item = document.createElement('div');
                 item.className = 'gallery-item';
                 
-                // ВАЖНО: Добавляем ID прямо в атрибут, чтобы искать элемент по номеру
-                item.dataset.id = i; 
-                
-                item.dataset.img = `reviews/${i}.jpg`;
-                item.dataset.title = data.name;
-                item.dataset.text = data.text;
+                // Пути к картинкам:
+                // Аватарка: reviews/1.jpg
+                // Скриншот: reviews/r1.jpeg
+                const avatarSrc = `reviews/${i}.jpg`;
+                const screenshotSrc = `reviews/r${i}.jpeg`;
 
-                item.innerHTML = `<img src="reviews/${i}.jpg" alt="Отзыв ${i}" onerror="this.src='https://placehold.co/400?text=Нет+фото'">`;
-                
+                item.dataset.avatar = avatarSrc;
+                item.dataset.screenshot = screenshotSrc;
+                item.dataset.title = data.name;
+
                 item.onclick = function() { openReview(this, false); };
+
+                // В сетке показываем Аватарку
+                item.innerHTML = `<img src="${avatarSrc}" alt="Отзыв ${i}" onerror="this.src='https://placehold.co/400?text=Фото'">`;
+                
                 galleryGrid.appendChild(item);
             }
 
-            // 2. ФУНКЦИЯ ОТКРЫТИЯ (Теперь обновляет и currentReviewId)
+            // 2. ЛОГИКА ОТКРЫТИЯ
             window.openReview = function(element, isAutoLoad) {
-                // Обновляем глобальный счетчик
-                currentReviewId = parseInt(element.dataset.id);
-
                 document.querySelectorAll('.gallery-item').forEach(el => el.classList.remove('active'));
                 element.classList.add('active');
-                
-                previewImg.src = element.dataset.img;
-                previewText.innerText = element.dataset.text;
+
+                placeholder.style.display = 'none';
+
+                // Заполняем панель
+                previewAvatar.src = element.dataset.avatar;
                 previewTitle.innerText = element.dataset.title;
-
-                if (!isAutoLoad && window.innerWidth < 900) {
-                    // Плавно скроллим к блоку с отзывом
-                    document.querySelector('.reviews-header-block').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            };
-
-            // 3. ФУНКЦИЯ ДЛЯ СТРЕЛОК (Круговая навигация)
-            window.changeReview = function(direction) {
-                // direction: -1 (назад) или 1 (вперед)
-                let newId = currentReviewId + direction;
-
-                // Круговая логика
-                if (newId > totalPhotos) newId = 1; // Если больше последнего -> идем в начало
-                if (newId < 1) newId = totalPhotos; // Если меньше первого -> идем в конец
-
-                // Находим нужный элемент в сетке (массивы начинаются с 0, поэтому newId - 1)
-                const nextItem = galleryGrid.children[newId - 1];
                 
-                // Открываем его
-                if (nextItem) {
-                    openReview(nextItem, false);
+                // Главное изменение: ставим путь к скриншоту
+                previewScreenshot.src = element.dataset.screenshot;
+
+                previewPanel.classList.add('active');
+
+                // Скролл на мобильном (если кликнул человек)
+                if (!isAutoLoad && window.innerWidth < 768) {
+                     previewPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             };
 
-            // 4. АВТОСТАРТ (Случайный отзыв)
+            // 3. АВТОСТАРТ (Случайный отзыв)
             const randomIndex = Math.floor(Math.random() * totalPhotos);
-            if (galleryGrid.children[randomIndex]) {
-                openReview(galleryGrid.children[randomIndex], true);
+            const randomItem = galleryGrid.children[randomIndex];
+            if (randomItem) {
+                openReview(randomItem, true);
             }
         });
     </script>
-
 </body>
 </html>
