@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ильвера Ситдикова | Духовный наставник и целитель</title>
+    <!-- Подключаем красивые шрифты Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Основные настройки стиля (CSS) --- */
+        :root {
+            --primary-color: #4A3B5E; /* Глубокий фиолетовый */
+            --accent-color: #C5A880; /* Мягкое золото */
+            --bg-light: #F9F7F5; /* Молочный фон */
+            --text-dark: #2D2D2D;
+            --text-light: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Кнопки --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        /* --- Обновленный Первый Экран (Full Screen) --- */
+        .hero-section {
+            /* 1. Занимаем 95% высоты экрана (почти весь экран) */
+            min-height: 95vh;
+            
+            /* 2. Центрируем контент по вертикали */
+            display: flex;
+            align-items: center; 
+            
+            /* 3. Фон и отступы */
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 20px 0; /* Минимальные отступы, чтобы не прилипало на маленьких экранах */
+            position: relative;
+        }
+
+        .hero-wrapper {
+            display: flex;
+            align-items: center; 
+            justify-content: space-between;
+            gap: 60px; /* Чуть больше воздуха между текстом и фото */
+        }
+
+        /* Левая часть с текстом */
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+            /* Сдвигаем текст чуть выше визуального центра для красоты */
+            margin-top: -20px; 
+        }
+
+        .hero-text h1 {
+            font-size: 3rem; 
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: #555;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            font-size: 0.85rem;
+            color: #777;
+            flex-wrap: wrap;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .hero-badge {
+            background: #fff;
+            padding: 8px 15px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Правая часть с фото */
+        .hero-image-block {
+            flex: 1;
+            max-width: 450px;
+            position: relative;
+        }
+
+        .hero-image-block img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 25px 25px 0px rgba(197, 168, 128, 0.25);
+            object-fit: cover;
+            /* Добавим легкую анимацию появления */
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Адаптивность --- */
+        @media (max-width: 900px) {
+            .hero-section {
+                min-height: auto; /* На телефоне высота автоматическая */
+                padding: 100px 0 60px; /* Отступ сверху больше, чтобы не прилипало к краю */
+            }
+            
+            .hero-wrapper {
+                flex-direction: column-reverse; /* Фото сверху */
+                text-align: center;
+                gap: 30px;
+            }
+            
+            .hero-text {
+                margin-top: 0;
+            }
+            
+            .hero-description {
+                border-left: none;
+                padding-left: 0;
+            }
+            
+            .hero-badges {
+                justify-content: center;
+            }
+            
+            .hero-image-block {
+                max-width: 320px;
+            }
+        }
+
+
+
+        /* Место под ваше фото */
+        .photo-placeholder {
+            width: 100%;
+            padding-bottom: 120%; /* Соотношение сторон */
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            background-image: url('photo_0.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .about-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .about-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .about-list li::before {
+            content: "✦";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- Услуги --- */
+        .services {
+            padding: 60px 0 80px;
+            background-color: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 3px solid var(--accent-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .service-card ul {
+            list-style: none;
+        }
+        .service-card ul li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* --- Призыв к действию (CTA) --- */
+        .cta {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+
+        .btn-light {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+        .btn-light:hover {
+            background-color: #fff;
+            color: var(--primary-color);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 30px 0;
+            text-align: center;
+            background: #333;
+            color: #888;
+            font-size: 0.8rem;
+        }
+
+
+        /* --- Галерея отзывов --- */
+        /* --- Контейнер для сетки и боковой панели --- */
+        .reviews-wrapper {
+            display: flex; /* Выстраиваем сетку и панель в ряд */
+            align-items: flex-start; /* Выравнивание по верху */
+            gap: 20px;
+            position: relative;
+        }
+
+        /* --- Левая часть: Сетка миниатюр --- */
+        .gallery-grid {
+            flex: 1;
+            display: grid;
+             /* Миниатюры по 90px */
+            grid-template-columns: repeat(9, 1fr); 
+            gap: 1px;
+        }
+
+        /* 2. Для Планшетов (поменьше экран) ставим 5 или 6 */
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        /* 3. Для Телефонов (узкий экран) ставим 3 или 5 */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                /* 5 в ряд на телефоне будет мелко, но влезет. 
+                   3 в ряд — крупнее и удобнее нажимать. */
+                grid-template-columns: repeat(4, 1fr); 
+            }
+        }
+
+
+        .gallery-item {
+            aspect-ratio: 1 / 1;
+            cursor: pointer;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .gallery-item:hover {
+            filter: brightness(0.9);
+        }
+
+        /* Стиль для активной (выбранной) миниатюры */
+        .gallery-item.active {
+            border-color: var(--primary-color);
+            transform: scale(0.95);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            pointer-events: none; /* Чтобы клик проходил сквозь картинку на div */
+        }
+
+        /* --- Правая часть: Панель просмотра (Сайдбар) --- */
+        .review-preview-panel {
+            width: 280px;
+            flex-shrink: 0;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 20px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            opacity: 0; 
+            visibility: hidden;
+            transform: translateX(20px);
+            transition: all 0.3s ease;
+            
+            /* Важно: расставляем элементы вертикально */
+            display: flex;
+            flex-direction: column;
+            max-height: 85vh; /* Ограничиваем высоту панели, чтобы не улетала */
+        }
+
+        .review-preview-panel.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        /* --- НОВЫЙ КОНТЕЙНЕР ШАПКИ --- */
+        .preview-header {
+            display: flex; /* Магия: ставит фото и текст в ряд */
+            align-items: center; /* Выравнивает их по центру */
+            gap: 15px; /* Расстояние между фото и именем */
+            margin-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0; /* Легкая линия-разделитель */
+            padding-bottom: 15px;
+            flex-shrink: 0; /* Шапка не сжимается */
+        }
+
+        /* Фото (Аватарка) */
+        .preview-image {
+            width: 60px; /* Компактный размер */
+            height: 60px;
+            border-radius: 50%; /* Круг */
+            object-fit: cover;
+            border: 2px solid var(--accent-color);
+            margin: 0; /* Убираем лишние отступы, теперь за них отвечает flex gap */
+        }
+
+        /* Имя клиента */
+        .preview-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            line-height: 1.1;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        /* Текст */
+        .preview-text {
+            font-size: 0.95rem;
+            color: #444;
+            overflow-y: auto; /* Скролл только у текста */
+            flex-grow: 1; /* Текст занимает всё оставшееся место */
+            padding-right: 5px;
+        }
+
+
+        .placeholder-text {
+            /* Сообщение "Выберите отзыв" */
+            position: absolute;
+            right: 0; top: 0; width: 280px; height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #999;
+            padding: 20px;
+            border: 2px dashed #eee;
+            border-radius: 12px;
+        }
+
+
+        /* --- Адаптивность для телефонов --- */
+        @media (max-width: 768px) {
+
+            .reviews-wrapper {
+                flex-direction: column-reverse; /* На телефоне панель будет СВЕРХУ сетки */
+            }
+            .review-preview-panel {
+                width: 100%; /* На телефоне панель во всю ширину */
+                position: static;
+                margin-bottom: 20px;
+            }
+            .placeholder-text {
+                position: relative;
+                width: 100%;
+                margin-bottom: 20px;
+                height: 100px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+     <!-- Новый объединенный Первый Экран -->
+     <section class="hero-section">
+        <div class="container">
+            <div class="hero-wrapper">
+                
+                <!-- ЛЕВАЯ КОЛОНКА: Текст -->
+                <div class="hero-text">
+                    <span class="subtitle">Ильвера Ситдикова</span>
+                    <h1>Раскрой свою внутреннюю силу</h1>
+                    
+                    <div class="hero-badges">
+                        <span class="hero-badge">💎 Наставничество</span>
+                        <span class="hero-badge">🧘‍♀️ Духовные практики</span>
+                        <span class="hero-badge">🕯 Исцеление души</span>
+                    </div>
+
+                    <p class="hero-description">
+                        Я — духовный проводник ченнелинга и целитель. Проживаю суть Женского Близнецового Пламени.<br><br>
+                        Помогу восстановить состояние и сбалансировать сферы жизни. Готова шагнуть в трансформацию со мной?
+                    </p>
+
+                    <a href="https://t.me/ILVERA69" class="btn">Записаться на сессию</a>
+                </div>
+
+                <!-- ПРАВАЯ КОЛОНКА: Фото -->
+                <div class="hero-image-block">
+                    <!-- Ваше фото -->
+                    <img src="photo_0.jpg" alt="Ильвера Ситдикова">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Услуги -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Чем я могу помочь?</h2>
+            
+            <div class="services-grid">
+                <!-- Карточка 1 -->
+                <div class="service-card">
+                    <h3>💎 Наставничество</h3>
+                    <ul>
+                        <li>Индивидуальные сессии (Онлайн/Офлайн)</li>
+                        <li>Восстановление психоэмоционального состояния</li>
+                        <li>Преодоление страхов</li>
+                        <li>Помощь в пробуждении сознания</li>
+                    </ul>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div class="service-card">
+                    <h3>🧘‍♀️ Практики</h3>
+                    <ul>
+                        <li>Медитации</li>
+                        <li>Дыхательные практики (элементы Пранаямы)</li>
+                        <li>Ребёфинг и холотропное дыхание</li>
+                        <li>Ментальные расстановки на уровне душ</li>
+                    </ul>
+                </div>
+
+                <!-- Карточка 3 -->
+                <div class="service-card">
+                    <h3>🕯 Исцеление</h3>
+                    <ul>
+                        <li>Отливки свинцом (очищение)</li>
+                        <li>Решение конфликтов</li>
+                        <li>Улучшение отношений</li>
+                        <li>Снятие эмоционального напряжения</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок Отзывы -->
+    <section class="reviews">
+        <div class="reviews-container" style="max-width: 100%; margin: 0 auto; padding: 0 20px;">
+            <h2 class="section-title">Стена доверия</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">Нажмите на фото в галерее, чтобы прочитать подробности</p>
+            
+            <div class="reviews-wrapper">
+                
+
+                <!-- 1. СЕТКА (Слева) -->
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Здесь пусто. Всё заполнит скрипт -->
+                </div>
+                
+                <!-- 2. БЛОК ПРОСМОТРА (Справа) -->
+                <!-- Изначально здесь висит заглушка -->
+                <div id="previewPlaceholder" class="placeholder-text">
+                    Нажмите на любую миниатюру,<br>чтобы увидеть отзыв
+                </div>
+
+                <!-- Панель, которая появится при клике -->
+                <div class="review-preview-panel" id="previewPanel">
+                    
+                    <!-- НОВЫЙ КОНТЕЙНЕР-ШАПКА (Фото + Имя в одну строку) -->
+                    <div class="preview-header">
+                        <img src="" alt="" class="preview-image" id="previewImg">
+                        <div class="preview-title" id="previewTitle">Имя клиента</div>
+                    </div>
+                    
+                    <!-- Текст отзыва -->
+                    <div class="preview-text" id="previewText">
+                        Текст отзыва появится здесь...
+                    </div>
+                    
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Модальное окно (Lightbox) -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div id="caption" class="lightbox-caption"></div>
+    </div>
+
+    
+
+    <!-- Призыв к действию -->
+    <section class="cta">
+        <div class="container">
+            <h2>Время перемен настало</h2>
+            <p>Если ты хочешь жить легче, свободнее и успешнее, знай — это сигнал, что твое сознание готово к изменениям. Готова шагнуть в эту трансформацию со мной?</p>
+            <a href="https://t.me/ILVERA69" class="btn btn-light">Написать мне в Telegram @ILVERA69</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ильвера Ситдикова. Духовный наставник.</p>
+        </div>
+    </footer>
+
+
+
+    <script>
+        // --- ВАШИ ОТЗЫВЫ ---
+        const reviewsData = [
+            { id: 1, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+            { id: 2, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
+            { id: 3, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
+            { id: 4, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
+            { id: 5, name: "Виктория", text: "Спасибо за трансформацию!" },
+            { id: 6, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+            { id: 7, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
+            { id: 8, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
+            { id: 9, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
+            { id: 10, name: "Виктория", text: "Спасибо за трансформацию!" },
+            { id: 11, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+            { id: 12, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
+            { id: 13, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
+            { id: 14, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
+            { id: 15, name: "Виктория", text: "Спасибо за трансформацию!" },
+            { id: 16, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+            { id: 17, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
+            { id: 18, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
+            { id: 19, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
+            { id: 20, name: "Виктория", text: "Спасибо за трансформацию!" },
+            { id: 21, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+            { id: 22, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
+            { id: 23, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
+            { id: 24, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
+            { id: 25, name: "Виктория", text: "Спасибо за трансформацию!" },
+            { id: 26, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+            { id: 27, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
+            { id: 28, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
+            { id: 29, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
+            { id: 30, name: "Виктория", text: "Спасибо за трансформацию!" },
+            { id: 31, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+            { id: 32, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
+            { id: 33, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
+            { id: 34, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
+            { id: 35, name: "Виктория", text: "Спасибо за трансформацию!" },
+            { id: 36, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+
+        ];
+    
+        document.addEventListener("DOMContentLoaded", function() {
+            const galleryGrid = document.getElementById('galleryGrid');
+            const previewPanel = document.getElementById('previewPanel');
+            const placeholder = document.getElementById('previewPlaceholder');
+            const previewImg = document.getElementById('previewImg');
+            const previewText = document.getElementById('previewText');
+            const previewTitle = document.getElementById('previewTitle');
+    
+            const totalPhotos = 36; 
+    
+            // 1. ГЕНЕРАЦИЯ СЕТКИ
+            for (let i = 1; i <= totalPhotos; i++) {
+                const data = reviewsData.find(item => item.id === i) || { name: "Отзыв клиента", text: "..." };
+    
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                
+                const imgSrc = `reviews/${i}.jpg`;
+                
+                item.dataset.img = imgSrc;
+                item.dataset.title = data.name;
+                item.dataset.text = data.text;
+    
+                // Обработка клика: передаем false (это НЕ автозагрузка, это клик человека)
+                item.onclick = function() { openReview(this, false); };
+                
+                // Вставляем картинку
+                item.innerHTML = `<img src="${imgSrc}" alt="Отзыв ${i}" onerror="this.src='https://placehold.co/400?text=Нет+фото'">`;
+                
+                galleryGrid.appendChild(item);
+            }
+    
+            // 2. ЛОГИКА ОТКРЫТИЯ (Обновленная)
+            // isAutoLoad - флаг. Если true, значит это скрипт открыл сам при старте.
+            window.openReview = function(element, isAutoLoad) {
+                document.querySelectorAll('.gallery-item').forEach(el => el.classList.remove('active'));
+                element.classList.add('active');
+                placeholder.style.display = 'none';
+                
+                previewImg.src = element.dataset.img;
+                previewText.innerText = element.dataset.text;
+                previewTitle.innerText = element.dataset.title;
+                
+                previewPanel.classList.add('active');
+                
+                // Скроллим к отзыву на телефоне ТОЛЬКО если нажал человек.
+                // При автозагрузке скроллить не надо, иначе сайт "прыгнет".
+                if (!isAutoLoad && window.innerWidth < 768) {
+                     previewPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            };
+    
+            // 3. АВТОМАТИЧЕСКИЙ ВЫБОР СЛУЧАЙНОГО ОТЗЫВА
+            const randomIndex = Math.floor(Math.random() * totalPhotos);
+            
+            // Находим этот элемент в сетке
+            const randomItem = galleryGrid.children[randomIndex];
+    
+            // Если элемент есть — открываем его программно (isAutoLoad = true)
+            if (randomItem) {
+                openReview(randomItem, true);
+            }
+        });
+    </script>
+    
+    
+
+    
+</body>
+</html>
