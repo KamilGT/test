@@ -98,17 +98,21 @@
             color: var(--primary-color);
         }
 
-        /* УВЕЛИЧЕННОЕ ИМЯ */
+        /* ВАРИАНТ 1: Строгая классика */
         .subtitle {
-            color: var(--accent-color);
-            font-weight: 800; /* Жирный */
-            font-size: 1.6rem; /* Крупный */
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            font-family: 'Cormorant Garamond', serif; /* Красивый шрифт с засечками */
+            color: #2D2D2D;        /* Темно-графитовый цвет (строгий, но мягче черного) */
+            font-weight: 700;      /* Жирность */
+            font-size: 2rem;       /* Крупный размер */
+            text-transform: uppercase; /* Все буквы заглавные */
+            letter-spacing: 4px;   /* Широкое расстояние между буквами */
             margin-bottom: 15px;
             display: block;
-            text-shadow: 1px 1px 0px rgba(0,0,0,0.05);
+            border-bottom: 2px solid var(--accent-color); /* Элегантная линия снизу */
+            display: inline-block; /* Чтобы линия была по ширине имени */
+            padding-bottom: 5px;
         }
+
 
         .hero-description {
             font-size: 1.15rem;

@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ильвера Ситдикова | Духовный наставник и целитель</title>
+    
     <!-- Подключаем красивые шрифты Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     
+    <!-- Иконки для соцсетей (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         /* --- Основные настройки стиля (CSS) --- */
         :root {
@@ -417,12 +421,41 @@
 
         /* --- Footer --- */
         footer {
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
             background: #333;
             color: #888;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
+
+        /* Соцсети */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover { transform: translateY(-5px); }
+        .social-link.tg:hover { background: #229ED9; }
+        .social-link.wa:hover { background: #25D366; }
+        .social-link.inst:hover { background: #C13584; }
+        .social-link.vk:hover { background: #0077FF; }
+        .social-link.yt:hover { background: #FF0000; }
 
         /* --- Адаптивность --- */
         @media (max-width: 900px) {
@@ -554,13 +587,22 @@
     <section class="cta">
         <div class="container">
             <h2>Время перемен настало</h2>
-            <p>Если ты хочешь жить легче, свободнее и успешнее, знай — это сигнал, что твое сознание готово к изменениям. Готова шагнуть в эту трансформацию со мной?</p>
+            <p>Если ты хочешь жить легче, свободнее и успешнее, знай — это сигнал, что твое сознание готово к изменениям. Готов шагнуть в эту трансформацию со мной?</p>
             <a href="https://t.me/ILVERA69" class="btn btn-light">Написать мне в Telegram @ILVERA69</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
+            <!-- Соцсети -->
+            <div class="social-icons">
+                <a href="https://t.me/ILVERA69" class="social-link tg" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://wa.me/79990000000" class="social-link wa" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-link inst" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link vk" target="_blank" title="VK"><i class="fab fa-vk"></i></a>
+                <a href="#" class="social-link yt" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+
             <p>&copy; 2024 Ильвера Ситдикова. Духовный наставник.</p>
         </div>
     </footer>

@@ -9,7 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+
+
     <!-- Иконки для соцсетей (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -98,17 +100,19 @@
             color: var(--primary-color);
         }
 
-        /* УВЕЛИЧЕННОЕ ИМЯ */
+        /* ВАРИАНТ 2: Рукописный стиль */
         .subtitle {
-            color: var(--accent-color);
-            font-weight: 800; /* Жирный */
-            font-size: 1.6rem; /* Крупный */
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
+            font-family: 'Pinyon Script', cursive; /* Рукописный шрифт */
+            color: #4A3B5E;        /* Ваш фирменный глубокий фиолетовый */
+            font-size: 3.5rem;     /* Для рукописного нужен размер побольше */
+            font-weight: 400;      /* Рукописные шрифты обычно тонкие */
+            text-transform: none;  /* Обычные буквы (не капс) */
+            letter-spacing: 1px;
+            margin-bottom: 10px;
             display: block;
-            text-shadow: 1px 1px 0px rgba(0,0,0,0.05);
+            line-height: 1.2;      /* Чтобы хвостики букв не обрезались */
         }
+
 
         .hero-description {
             font-size: 1.15rem;
