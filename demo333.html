@@ -42,7 +42,7 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -118,21 +118,19 @@
         .hero-wrapper {
             display: flex;
             align-items: center; 
-            justify-content: space-between;
-            gap: 60px;
+            justify-content: center; 
+            gap: 80px;
         }
 
         .hero-text {
             flex: 1; /* Забирает 50% места */
-            max-width: 600px ; 
-            margin-top: 0;   /* Убираем сдвиг, чтобы не резалось сверху */
-            padding-right: 20px; /* Небольшой зазор до фото */
+            max-width: 550px ; 
         }
 
         .hero-text h1 {
-            font-size: 3rem; 
+            font-size: 2.6rem; 
             line-height: 1.1;
-            margin-bottom: 25px; 
+            margin-bottom: 15px; 
             color: var(--primary-color);
         }
 
@@ -231,8 +229,9 @@
 
         .hero-image-block {
             flex: 1; /* Забирает 50% места */
-            max-width: 400px;
-            /* На мобильных фото уйдет вниз, это ок */
+            max-width: 500px; /* Ограничим ширину фото */
+            display: flex;    /* Чтобы управлять картинкой внутри */
+            justify-content: flex-start; /* Прижимаем фото к тексту (влево) */
         }
 
         .hero-image-block img {
@@ -557,21 +556,41 @@
         .social-link.yt:hover { background: #FF0000; }
 
         /* --- Адаптивность для телефонов --- */
+                /* --- Адаптивность --- */
+        
+        /* Планшеты и телефоны (меньше 900px) */
         @media (max-width: 900px) {
             .hero-section {
                 min-height: auto;
-                padding: 100px 0 60px;
+                padding: 60px 0; /* Чуть меньше отступы */
             }
             .hero-wrapper {
-                flex-direction: column-reverse;
+                flex-direction: column-reverse; /* Фото сверху, текст снизу */
                 text-align: center;
                 gap: 30px;
             }
-            .hero-text { margin-top: 0; }
-            .hero-description { border-left: none; padding-left: 0; }
-            .hero-badges { justify-content: center; }
-            .hero-image-block { max-width: 320px; }
+            .hero-text { 
+                margin-top: 0; 
+                max-width: 100%; /* Текст во всю ширину */
+            }
+            .hero-description { 
+                border-left: none; 
+                padding-left: 0; 
+                text-align: left; /* Текст списка лучше читать слева */
+                display: inline-block; /* Чтобы список был по центру, но текст слева */
+            }
+            .hero-badges { 
+                justify-content: center; 
+            }
+            
+            /* КАРТИНКА */
+            .hero-image-block { 
+                max-width: 100%; /* На телефоне пусть будет во всю ширину */
+                width: 350px;    /* Но не шире 350px, чтобы не было гигантизма */
+                margin: 0 auto;  /* По центру */
+            }
         }
+
 
         @media (max-width: 768px) {
             .reviews-wrapper {
