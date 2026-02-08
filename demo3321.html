@@ -42,7 +42,11 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
+            /* 1100px - старт
+            1280px — Оптимально для современных ноутбуков (поля станут меньше).
+            1400px — Сайт станет очень широким, поля будут узкими.
+            1600px — Почти во весь экран на большинстве мониторов. */
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -520,7 +524,18 @@
             .hero-text { margin-top: 0; }
             .hero-description { border-left: none; padding-left: 0; }
             .hero-badges { justify-content: center; }
-            .hero-image-block { max-width: 320px; }
+            .hero-image-block { 
+                max-width: 100%;
+                width: 350px;    
+                margin: 0 auto 30px auto; /* Центрируем блок и добавляем отступ снизу */
+                
+                /* ОТКЛЮЧАЕМ ЛИПКОСТЬ ДЛЯ ТЕЛЕФОНА */
+                position: static; 
+                
+                /* ЦЕНТРИРУЕМ КАРТИНКУ ВНУТРИ БЛОКА */
+                justify-content: center; 
+            }
+
         }
 
         @media (max-width: 768px) {
