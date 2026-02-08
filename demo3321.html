@@ -117,10 +117,14 @@
 
         .hero-wrapper {
             display: flex;
-            align-items: center; 
+            /* ВАЖНО: flex-start, чтобы колонки были независимы по высоте */
+            align-items: flex-start; 
             justify-content: space-between;
-            gap: 60px;
+            gap: 30px;
+            position: relative;
         }
+
+
 
         .hero-text {
             flex: 1.2; /* Забирает 60% места */
@@ -217,19 +221,32 @@
         }
 
         .hero-image-block {
-            flex: 0.8; /* Забирает 40% места */
-            max-width: 400px;
-            /* На мобильных фото уйдет вниз, это ок */
+            flex: 1;
+            max-width: 550px;
+            
+            /* ЛИПКОСТЬ ПО ЦЕНТРУ */
+            position: -webkit-sticky;
+            position: sticky;
+            /* Отступ сверху 10% от высоты экрана */
+            top: 10vh; 
+            
+            display: flex;
+            justify-content: flex-start;
         }
 
         .hero-image-block img {
             width: 100%;
             height: auto;
+            
+            /* ВАЖНО: Ограничиваем высоту фото, чтобы оно влезало в экран целиком */
+            max-height: 80vh; 
+            object-fit: cover; /* Сохраняет пропорции, если придется обрезать края */
+            
             border-radius: 20px;
             box-shadow: 25px 25px 0px rgba(197, 168, 128, 0.25);
-            object-fit: cover;
             animation: fadeIn 1.5s ease;
         }
+
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
