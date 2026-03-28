@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ильвера Ситдикова — духовный наставник: индивидуальные сессии, дыхательные практики, ментальные расстановки и сопровождение трансформации.">
     <title>Ильвера Ситдикова | Духовный наставник и целитель</title>
     
     <!-- Шрифты -->
@@ -43,7 +42,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -119,19 +118,20 @@
         .hero-wrapper {
             display: flex;
             align-items: center; 
-            justify-content: center; 
-            gap: 80px;
+            justify-content: space-between;
+            gap: 60px;
         }
 
         .hero-text {
-            flex: 1; /* Забирает 50% места */
-            max-width: 550px ; 
+            flex: 1;
+            max-width: 600px;
+            margin-top: -20px; 
         }
 
         .hero-text h1 {
-            font-size: 2.6rem; 
+            font-size: 3rem; 
             line-height: 1.1;
-            margin-bottom: 15px; 
+            margin-bottom: 25px;
             color: var(--primary-color);
         }
 
@@ -140,7 +140,7 @@
             font-family: 'Montserrat', sans-serif;
             color: #8B6B3D;        /* Темно-бронзовый/Коричневый (дорогой цвет) */
             font-weight: 800;      /* Очень жирный */
-            font-size: 1.8rem; 
+            font-size: 1.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 15px;
@@ -148,77 +148,20 @@
             text-shadow: none;
         }
 
-        .hero-questions {
-            font-size: 1.3rem;    
-            line-height: 1.5;
-            color: #444;
-            
-            /* margin-top: 25px;    */
-        }
-
 
         .hero-description {
-            font-size: 1.2rem;     /* Увеличили размер шрифта (было 1.15) */
-            line-height: 1.5;
-            color: #444;
-            
-            /* ГЛАВНОЕ: Отступ снизу, чтобы кнопки не прилипали */
-            margin-bottom: 40px;   
-            
-            /* Декор: полоска слева */
+            font-size: 1.15rem;
+            color: #555;
+            margin-bottom: 40px;
             border-left: 4px solid var(--accent-color);
             padding-left: 20px;
-        }
-
-        /* Стиль для жирного текста внутри описания */
-        .hero-description b {
-            color: var(--primary-color); /* Выделяем цветом (фиолетовым) */
-            font-weight: 700;
-            display: block; /* Переносим на новую строку */
-            margin-top: 10px; /* Отступ сверху для акцента */
-        }
-
-
-        .hero-intro {
-            font-weight: 700;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            color: var(--primary-color);
-        }
-
-        .hero-list {
-            list-style: none; /* Убираем стандартные точки */
-            padding: 0;
-            margin: 0 0 15px 0;
-        }
-
-        .hero-list li {
-            position: relative;
-            padding-left: 15px; /* Место под нашу точку */
-            margin-bottom: 6px; /* Маленький отступ между пунктами */
-        }
-
-        /* Наша красивая точка-маркер */
-        .hero-list li::before {
-            content: "•";
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .hero-outro {
-            font-style: italic;
-            background: rgba(197, 168, 128, 0.1); /* Легкая подложка для акцента */
-            padding: 10px;
-            border-radius: 8px;
+            line-height: 1.6;
         }
 
         .hero-badges {
             display: flex;
             gap: 10px;
-            margin-bottom: 20px; /* Было 30px */
+            margin-bottom: 30px;
             font-size: 0.85rem;
             color: #777;
             flex-wrap: wrap;
@@ -237,10 +180,9 @@
         }
 
         .hero-image-block {
-            flex: 1; /* Забирает 50% места */
-            max-width: 500px; /* Ограничим ширину фото */
-            display: flex;    /* Чтобы управлять картинкой внутри */
-            justify-content: flex-start; /* Прижимаем фото к тексту (влево) */
+            flex: 1;
+            max-width: 450px;
+            position: relative;
         }
 
         .hero-image-block img {
@@ -256,60 +198,6 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-
-        /* --- Блок "Обо мне" (Второй экран) --- */
-        .about-section {
-            padding: 80px 0;
-            background-color: #fff;
-        }
-
-        .about-wrapper {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-        }
-
-        /* Декоративная черта слева (опционально) */
-        .about-text-content {
-            border-left: 5px solid var(--accent-color);
-            padding-left: 30px;
-        }
-
-        .about-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .about-list {
-            list-style: none;
-        }
-
-        .about-list li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-            color: #444;
-            line-height: 1.5;
-        }
-
-        .about-list li::before {
-            content: "✦"; /* Красивая звездочка */
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
-            font-size: 1.2rem;
-        }
-
-        /* Адаптив */
-        @media (max-width: 768px) {
-            .about-wrapper { flex-direction: column; }
-            .about-text-content { border-left: none; padding-left: 0; }
-        }
-
 
         /* --- Услуги --- */
         .services {
@@ -369,7 +257,6 @@
             align-items: flex-start; 
             gap: 20px;
             position: relative;
-            --preview-panel-max-height: 85vh;
         }
 
         /* Левая часть: Сетка миниатюр */
@@ -405,11 +292,6 @@
             filter: brightness(0.9);
         }
 
-        .gallery-item:focus-visible {
-            outline: 3px solid var(--primary-color);
-            outline-offset: 2px;
-        }
-
         .gallery-item.active {
             border-color: var(--primary-color);
             transform: scale(0.95);
@@ -442,7 +324,7 @@
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
-            max-height: var(--preview-panel-max-height);
+            max-height: 85vh; 
         }
 
         .review-preview-panel.active {
@@ -480,24 +362,17 @@
             margin: 0;
         }
 
-        .preview-scan-wrap {
-            overflow-y: auto;
-            flex-grow: 1;
+        .preview-text {
+            font-size: 0.95rem;
+            color: #444;
+            overflow-y: auto; 
+            flex-grow: 1; 
             padding-right: 5px;
-        }
-
-        .preview-scan {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 10px;
-            border: 1px solid #f0f0f0;
-            background: #fafafa;
         }
 
         .placeholder-text {
             position: absolute;
-            right: 0; top: 0; width: 280px; height: var(--preview-panel-max-height);
+            right: 0; top: 0; width: 280px; height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -576,53 +451,23 @@
         .social-link.inst:hover { background: #C13584; }
         .social-link.vk:hover { background: #0077FF; }
         .social-link.yt:hover { background: #FF0000; }
-        .social-link.mail:hover { background: #ea4335; }
-        .social-link.max { background: #20232a; border: 1px solid #3a3f4b; }
-        .social-link.max:hover { background: #2f3440; }
-        .max-icon {
-            font-family: "Arial Black", Arial, sans-serif;
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            line-height: 1;
-        }
 
         /* --- Адаптивность для телефонов --- */
-                /* --- Адаптивность --- */
-        
-        /* Планшеты и телефоны (меньше 900px) */
         @media (max-width: 900px) {
             .hero-section {
                 min-height: auto;
-                padding: 60px 0; /* Чуть меньше отступы */
+                padding: 100px 0 60px;
             }
             .hero-wrapper {
-                flex-direction: column-reverse; /* Фото сверху, текст снизу */
+                flex-direction: column-reverse;
                 text-align: center;
                 gap: 30px;
             }
-            .hero-text { 
-                margin-top: 0; 
-                max-width: 100%; /* Текст во всю ширину */
-            }
-            .hero-description { 
-                border-left: none; 
-                padding-left: 0; 
-                text-align: left; /* Текст списка лучше читать слева */
-                display: inline-block; /* Чтобы список был по центру, но текст слева */
-            }
-            .hero-badges { 
-                justify-content: center; 
-            }
-            
-            /* КАРТИНКА */
-            .hero-image-block { 
-                max-width: 100%; /* На телефоне пусть будет во всю ширину */
-                width: 350px;    /* Но не шире 350px, чтобы не было гигантизма */
-                margin: 0 auto;  /* По центру */
-            }
+            .hero-text { margin-top: 0; }
+            .hero-description { border-left: none; padding-left: 0; }
+            .hero-badges { justify-content: center; }
+            .hero-image-block { max-width: 320px; }
         }
-
 
         @media (max-width: 768px) {
             .reviews-wrapper {
@@ -632,14 +477,12 @@
                 width: 100%;
                 position: static;
                 margin-bottom: 20px;
-                max-height: none;
             }
             .placeholder-text {
                 position: relative;
                 width: 100%;
                 margin-bottom: 20px;
                 height: 100px;
-                max-height: none;
             }
         }
     </style>
@@ -653,6 +496,7 @@
                 
                 <!-- ЛЕВАЯ КОЛОНКА -->
                 <div class="hero-text">
+                    <!-- ИМЯ МАСТЕРА -->
                     <span class="subtitle">Ильвера Ситдикова</span>
                     <h1>Раскрой свою внутреннюю силу</h1>
                     
@@ -662,81 +506,34 @@
                         <span class="hero-badge">🕯 Исцеление души</span>
                     </div>
 
-                    <!-- Оставляем только главный призыв -->
                     <p class="hero-description">
-                        Помогу восстановить состояние и сбалансировать сферы жизни.
-                        <!-- Тег <b> теперь делает текст жирным, цветным и с новой строки -->
-                        <b>Готов(а) шагнуть в трансформацию со мной?</b>
+                        Давайте знакомиться <br><br>
+                        Я наставник, духовный проводник чистого потока Ченеллинг в Вашу суть, в Ваш свет и внутреннюю силу, мастер дыхательных практик с элементами - пранояма, ребёфинг, холотропное дыхание,
+                        провожу дыхательные-ментальные расстоновки на уровне душ, проживаю свою женскую суть Близнецового Пламени.<br><br>
+                        Помогу восстановить состояние и сбалансировать сферы жизни. Готов шагнуть в трансформацию со мной?
                     </p>
 
-
-                    <!-- Кнопки -->
+                    <!-- БЛОК ИЗ ДВУХ КНОПОК -->
                     <div class="hero-buttons">
+                        <!-- Кнопка 1: Запись -->
                         <a href="https://t.me/ILVERA69" class="btn">Записаться</a>
-                        <a href="https://t.me/+0lgaxWEGh8gwZTg6" class="btn-outline" target="_blank" rel="noopener noreferrer">
+                        
+                        <!-- Кнопка 2: Канал (Замените ссылку на свою!) -->
+                        <a href="https://t.me/+0lgaxWEGh8gwZTg6" class="btn-outline" target="_blank">
                             <i class="fab fa-telegram-plane"></i> Мой Канал
                         </a>
                     </div>
+                    
                 </div>
-
 
                 <!-- ПРАВАЯ КОЛОНКА -->
                 <div class="hero-image-block">
-                    <img src="photo.jpg" alt="Ильвера Ситдикова">
+                    <img src="photo_0.jpg" alt="Ильвера Ситдикова">
                 </div>
 
             </div>
         </div>
     </section>
-
-
-    <!-- Блок ОБО МНЕ -->
-    <section class="about-section">
-        <div class="container">
-            <div class="about-wrapper">
-                <div class="about-text-content">
-                    <h2 class="about-title">Давайте знакомиться</h2>
-                    <ul class="about-list">
-                        <li>Я Ченеллер, проводник в истинное желание твоей души, в твою суть, в твой свет и внутреннюю силу</li>
-                        <li>Мастер дыхательных практик (пранояма, ребёфинг, холотропное дыхание)</li>
-                        <li>Провожу ментальные расстановки на уровне душ</li>
-                        <li>Провожу выездные ретриты у подножья священных гор Иремель и Зигальга</li>
-                        <li>Делаю отливки свинцом более 13 лет</li>
-                        <li>Проживаю женскую суть Близнецового Пламени</li>
-                    </ul>
-
-                    <h2 class="about-title">Почему ты не слышишь сигналы своего высшего Я:</h2>
-                    <ul class="about-list">
-                        <li>Связь с собой теряется из-за накопленных эмоций, страхов и установок, которые остаются в теле и подсознании. Их невозможно убрать усилием воли или логикой.</li>
-                    </ul>
-                    
-                    <h2 class="about-title">Что ты получаешь в результате</h2>
-                    <ul class="about-list">
-                        <li>Возвращение контакта с собой</li>
-                        <li>Спокойную уверенность в выборе</li>
-                        <li>Больше энергии и устойчивости</li>
-                        <li>Ощущение, что ты снова живёшь свою жизнь</li>
-                        <li>События вокруг начнут сами выстраиваться по наилучшему варианту на данный момент времени </li>
-                    </ul>
-                    
-                    <br>
-                    <p class="hero-questions">
-                        Если ты чувствуешь отклик — <b>напиши мне в личные сообщения.</b>
-                        <br>
-                        Я подскажу, с какой практики лучше начать именно тебе.
-                      </p>
-
-                    <br>
-                    <p class="hero-questions">Я не создаю иллюзию духовных проработок. Я иду в корень — туда, где когда-то создался блок, зажим.</p>
-                    
-                    <br>
-                    <p class="hero-questions">Доверившись моему дару яснознания и ясновидения, ты сделаешь шаг к освобождению от боли прошлого и обретению счастья и свободы в настоящем. Начни своё преобразование уже сегодня!</p>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    
 
     <!-- Услуги -->
     <section class="services">
@@ -781,7 +578,7 @@
     <section class="reviews">
         <div class="reviews-container" style="max-width: 100%; margin: 0 auto; padding: 0 20px;">
             <h2 class="section-title">Стена доверия</h2>
-            <p style="text-align: center; margin-bottom: 30px; color: #666;">Нажмите на фото в галерее, чтобы открыть скан отзыва</p>
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">Нажмите на фото в галерее, чтобы прочитать подробности</p>
             
             <div class="reviews-wrapper">
                 <!-- 1. СЕТКА (Слева) -->
@@ -797,8 +594,8 @@
                         <img src="" alt="" class="preview-image" id="previewImg">
                         <div class="preview-title" id="previewTitle">Имя клиента</div>
                     </div>
-                    <div class="preview-scan-wrap" id="previewScanWrap">
-                        <img src="" alt="" class="preview-scan" id="previewScan">
+                    <div class="preview-text" id="previewText">
+                        Текст отзыва появится здесь...
                     </div>
                 </div>
             </div>
@@ -819,94 +616,99 @@
             <!-- Соцсети -->
             <div class="social-icons">
                 <!-- Личка (самолетик) -->
-                <a href="https://t.me/ILVERA69" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Написать мне лично">
+                <a href="https://t.me/ILVERA69" class="social-link tg" target="_blank" title="Написать мне лично">
                     <i class="fab fa-telegram-plane"></i>
                 </a>
                 
                 <!-- КАНАЛ (Громкоговоритель/Новости) -->
                 <!-- target="_blank" открывает в новой вкладке -->
-                <a href="https://t.me/+0lgaxWEGh8gwZTg6" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Мой Телеграм-канал" style="background: #fff; color: #229ED9; border: 2px solid #229ED9;">
+                <a href="https://t.me/+0lgaxWEGh8gwZTg6" class="social-link tg" target="_blank" title="Мой Телеграм-канал" style="background: #fff; color: #229ED9; border: 2px solid #229ED9;">
                     <i class="fas fa-bullhorn"></i>
                 </a>                
                 
                 
-                <a href="https://whatsapp.com/dl/" class="social-link wa" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com/sitdikova_ilvera" class="social-link inst" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="mailto:ilvera69@mail.ru" class="social-link mail" title="E-mail"><i class="fas fa-envelope"></i></a>
-                <a href="https://max.ru/u/f9LHodD0cOJS7diLaHgIue6mxa4Qjx1kaxz4WjEKQkUqwhomlWcYtCnDxpA" class="social-link max" target="_blank" rel="noopener noreferrer" title="MAX"><span class="max-icon">MAX</span></a>
-                <a href="https://vk.ru/id177739125" class="social-link vk" target="_blank" rel="noopener noreferrer" title="VK"><i class="fab fa-vk"></i></a>
-                <a href="https://youtube.com/@mommy_dragon?si=_bSPuVhnY9Qzcek5" class="social-link yt" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me/79990000000" class="social-link wa" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-link inst" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link vk" target="_blank" title="VK"><i class="fab fa-vk"></i></a>
+                <a href="#" class="social-link yt" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
 
-            <p id="copyrightText"></p>
+            <p>&copy; 2024 Ильвера Ситдикова. Духовный наставник.</p>
         </div>
     </footer>
 
-    <script src="reviews/reviews-data.js"></script>
     <script>
+        // --- ВАШИ ОТЗЫВЫ (ТЕКСТ) ---
+        const reviewsData = [
+            { id: 1, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+            { id: 2, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
+            { id: 3, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
+            { id: 4, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
+            { id: 5, name: "Виктория", text: "Спасибо за трансформацию!" },
+            { id: 6, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+            { id: 7, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
+            { id: 8, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
+            { id: 9, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
+            { id: 10, name: "Виктория", text: "Спасибо за трансформацию!" },
+            { id: 11, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+            { id: 12, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
+            { id: 13, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
+            { id: 14, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
+            { id: 15, name: "Виктория", text: "Спасибо за трансформацию!" },
+            { id: 16, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+            { id: 17, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
+            { id: 18, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
+            { id: 19, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
+            { id: 20, name: "Виктория", text: "Спасибо за трансформацию!" },
+            { id: 21, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+            { id: 22, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
+            { id: 23, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
+            { id: 24, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
+            { id: 25, name: "Виктория", text: "Спасибо за трансформацию!" },
+            { id: 26, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+            { id: 27, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
+            { id: 28, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
+            { id: 29, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
+            { id: 30, name: "Виктория", text: "Спасибо за трансформацию!" },
+            { id: 31, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+            { id: 32, name: "Елена, Москва", text: "Очень мощная практика дыхания. Сначала было страшно, но вы так мягко меня провели через этот процесс." },
+            { id: 33, name: "Ольга, Казань", text: "Не ожидала такого эффекта от отливки свинцом. Голова стала ясной, ушла тревога." },
+            { id: 34, name: "Алина, С-Петербург", text: "Наставничество помогло мне пробить финансовый потолок." },
+            { id: 35, name: "Виктория", text: "Спасибо за трансформацию!" },
+            { id: 36, name: "Мария, г. Уфа", text: "Ильвера, спасибо огромное! После сессии у меня словно выросли крылья. Я наконец-то помирилась с мужем." },
+        ];
+
         document.addEventListener("DOMContentLoaded", function() {
-            const reviewsWrapper = document.querySelector('.reviews-wrapper');
             const galleryGrid = document.getElementById('galleryGrid');
             const previewPanel = document.getElementById('previewPanel');
             const placeholder = document.getElementById('previewPlaceholder');
             const previewImg = document.getElementById('previewImg');
-            const previewScan = document.getElementById('previewScan');
+            const previewText = document.getElementById('previewText');
             const previewTitle = document.getElementById('previewTitle');
-            const fallbackReviewerTitle = 'Отзыв клиента';
-            const dataRoot = window.reviewsData && typeof window.reviewsData === 'object' ? window.reviewsData : {};
-            const reviewItems = dataRoot.items && typeof dataRoot.items === 'object' ? dataRoot.items : {};
-            const totalPhotos = Number.isInteger(dataRoot.totalSlots) && dataRoot.totalSlots > 0 ? dataRoot.totalSlots : 36;
 
-            const getReviewerTitle = function(item) {
-                const name = item && typeof item.name === 'string' ? item.name.trim() : '';
-                const city = item && typeof item.city === 'string' ? item.city.trim() : '';
-                if (!name) {
-                    return fallbackReviewerTitle;
-                }
-                return city ? `${name}, ${city}` : name;
-            };
+            const totalPhotos = 36; 
 
-            const detectAvailablePhotoCount = function(maxCount) {
-                return new Promise(function(resolve) {
-                    let index = 1;
+            // 1. ГЕНЕРАЦИЯ СЕТКИ
+            for (let i = 1; i <= totalPhotos; i++) {
+                const data = reviewsData.find(item => item.id === i) || { name: "Отзыв клиента", text: "..." };
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
 
-                    const checkNext = function() {
-                        if (index > maxCount) {
-                            resolve(maxCount);
-                            return;
-                        }
+                const imgSrc = `reviews/${i}.jpg`;
+                
+                item.dataset.img = imgSrc;
+                item.dataset.title = data.name;
+                item.dataset.text = data.text;
 
-                        const probe = new Image();
-                        probe.onload = function() {
-                            index += 1;
-                            checkNext();
-                        };
-                        probe.onerror = function() {
-                            resolve(index - 1);
-                        };
-                        probe.src = `reviews/${index}.jpeg`;
-                    };
+                item.onclick = function() { openReview(this, false); };
 
-                    checkNext();
-                });
-            };
+                // object-position: top; гарантирует, что лицо не обрежется
+                item.innerHTML = `<img src="${imgSrc}" alt="Отзыв ${i}" loading="lazy" onerror="this.src='https://placehold.co/400?text=Фото'">`;
+                
+                galleryGrid.appendChild(item);
+            }
 
-            const syncPreviewPanelHeight = function() {
-                if (!reviewsWrapper || !galleryGrid) {
-                    return;
-                }
-
-                if (window.innerWidth <= 768) {
-                    reviewsWrapper.style.removeProperty('--preview-panel-max-height');
-                    return;
-                }
-
-                const galleryHeight = Math.round(galleryGrid.getBoundingClientRect().height);
-                if (galleryHeight > 0) {
-                    reviewsWrapper.style.setProperty('--preview-panel-max-height', `${galleryHeight}px`);
-                }
-            };
-
+            // 2. ЛОГИКА ОТКРЫТИЯ
             window.openReview = function(element, isAutoLoad) {
                 document.querySelectorAll('.gallery-item').forEach(el => el.classList.remove('active'));
                 element.classList.add('active');
@@ -914,26 +716,8 @@
                 placeholder.style.display = 'none';
 
                 previewImg.src = element.dataset.img;
-                previewImg.alt = `Миниатюра отзыва: ${element.dataset.title}`;
+                previewText.innerText = element.dataset.text;
                 previewTitle.innerText = element.dataset.title;
-
-                const scanSources = [
-                    element.dataset.scanPrimary,
-                    element.dataset.scanFallback,
-                    element.dataset.scanLastResort
-                ];
-                let scanSourceIndex = 0;
-                const loadNextScanSource = function() {
-                    if (scanSourceIndex >= scanSources.length) {
-                        previewScan.onerror = null;
-                        return;
-                    }
-                    previewScan.src = scanSources[scanSourceIndex];
-                    scanSourceIndex += 1;
-                };
-                previewScan.onerror = loadNextScanSource;
-                previewScan.alt = `Скан отзыва: ${element.dataset.title}`;
-                loadNextScanSource();
 
                 previewPanel.classList.add('active');
 
@@ -942,66 +726,11 @@
                 }
             };
 
-            const initGallery = async function() {
-                const availablePhotoCount = await detectAvailablePhotoCount(totalPhotos);
-                const sourcePhotoCount = availablePhotoCount > 0 ? availablePhotoCount : totalPhotos;
-
-                // 1. ГЕНЕРАЦИЯ СЕТКИ
-                for (let i = 1; i <= totalPhotos; i++) {
-                    const sourceId = String(((i - 1) % sourcePhotoCount) + 1);
-                    const sourceItem = reviewItems[sourceId] && typeof reviewItems[sourceId] === 'object' ? reviewItems[sourceId] : {};
-                    const reviewerTitle = getReviewerTitle(sourceItem);
-                    const imgSrc = sourceItem.photo && typeof sourceItem.photo === 'string'
-                        ? sourceItem.photo
-                        : `reviews/${sourceId}.jpeg`;
-                    const reviewScanSrc = sourceItem.scan && typeof sourceItem.scan === 'string'
-                        ? sourceItem.scan
-                        : `reviews/r${sourceId}.jpeg`;
-                    const item = document.createElement('div');
-                    item.className = 'gallery-item';
-                    item.setAttribute('role', 'button');
-                    item.setAttribute('tabindex', '0');
-                    item.setAttribute('aria-label', `Открыть отзыв ${sourceId}: ${reviewerTitle}`);
-
-                    item.dataset.img = imgSrc;
-                    item.dataset.title = reviewerTitle;
-                    item.dataset.scanPrimary = reviewScanSrc;
-                    item.dataset.scanFallback = imgSrc;
-                    item.dataset.scanLastResort = imgSrc;
-
-                    item.addEventListener('click', function() {
-                        openReview(item, false);
-                    });
-                    item.addEventListener('keydown', function(event) {
-                        if (event.key === 'Enter' || event.key === ' ') {
-                            event.preventDefault();
-                            openReview(item, false);
-                        }
-                    });
-
-                    // object-position: top; гарантирует, что лицо не обрежется
-                    item.innerHTML = `<img src="${imgSrc}" alt="Отзыв ${sourceId}" loading="lazy" onerror="this.src='https://placehold.co/400?text=Фото'">`;
-
-                    galleryGrid.appendChild(item);
-                }
-
-                syncPreviewPanelHeight();
-                window.addEventListener('resize', syncPreviewPanelHeight);
-                window.addEventListener('load', syncPreviewPanelHeight);
-
-                // 3. АВТОСТАРТ
-                const randomIndex = Math.floor(Math.random() * totalPhotos);
-                const randomItem = galleryGrid.children[randomIndex];
-                if (randomItem) {
-                    openReview(randomItem, true);
-                }
-            };
-
-            initGallery();
-
-            const copyrightText = document.getElementById('copyrightText');
-            if (copyrightText) {
-                copyrightText.textContent = `© ${new Date().getFullYear()} Ильвера Ситдикова. Духовный наставник.`;
+            // 3. АВТОСТАРТ
+            const randomIndex = Math.floor(Math.random() * totalPhotos);
+            const randomItem = galleryGrid.children[randomIndex];
+            if (randomItem) {
+                openReview(randomItem, true);
             }
         });
     </script>

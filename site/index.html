@@ -480,19 +480,13 @@
             margin: 0;
         }
 
-        .preview-scan-wrap {
-            overflow-y: auto;
-            flex-grow: 1;
+        .preview-text {
+            font-size: 0.95rem;
+            color: #444;
+            overflow-y: auto; 
+            flex-grow: 1; 
             padding-right: 5px;
-        }
-
-        .preview-scan {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 10px;
-            border: 1px solid #f0f0f0;
-            background: #fafafa;
+            white-space: pre-line;
         }
 
         .placeholder-text {
@@ -781,7 +775,7 @@
     <section class="reviews">
         <div class="reviews-container" style="max-width: 100%; margin: 0 auto; padding: 0 20px;">
             <h2 class="section-title">Стена доверия</h2>
-            <p style="text-align: center; margin-bottom: 30px; color: #666;">Нажмите на фото в галерее, чтобы открыть скан отзыва</p>
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">Нажмите на фото в галерее, чтобы прочитать подробности</p>
             
             <div class="reviews-wrapper">
                 <!-- 1. СЕТКА (Слева) -->
@@ -797,8 +791,8 @@
                         <img src="" alt="" class="preview-image" id="previewImg">
                         <div class="preview-title" id="previewTitle">Имя клиента</div>
                     </div>
-                    <div class="preview-scan-wrap" id="previewScanWrap">
-                        <img src="" alt="" class="preview-scan" id="previewScan">
+                    <div class="preview-text" id="previewText">
+                        Текст отзыва появится здесь...
                     </div>
                 </div>
             </div>
@@ -850,8 +844,9 @@
             const previewPanel = document.getElementById('previewPanel');
             const placeholder = document.getElementById('previewPlaceholder');
             const previewImg = document.getElementById('previewImg');
-            const previewScan = document.getElementById('previewScan');
+            const previewText = document.getElementById('previewText');
             const previewTitle = document.getElementById('previewTitle');
+            const fallbackReviewText = 'Текст отзыва пока не добавлен.';
             const fallbackReviewerTitle = 'Отзыв клиента';
             const dataRoot = window.reviewsData && typeof window.reviewsData === 'object' ? window.reviewsData : {};
             const reviewItems = dataRoot.items && typeof dataRoot.items === 'object' ? dataRoot.items : {};
@@ -864,6 +859,11 @@
                     return fallbackReviewerTitle;
                 }
                 return city ? `${name}, ${city}` : name;
+            };
+
+            const getReviewText = function(item) {
+                const text = item && typeof item.text === 'string' ? item.text.trim() : '';
+                return text || fallbackReviewText;
             };
 
             const detectAvailablePhotoCount = function(maxCount) {
@@ -914,26 +914,9 @@
                 placeholder.style.display = 'none';
 
                 previewImg.src = element.dataset.img;
-                previewImg.alt = `Миниатюра отзыва: ${element.dataset.title}`;
+                previewImg.alt = `Отзыв ${element.dataset.reviewId}`;
                 previewTitle.innerText = element.dataset.title;
-
-                const scanSources = [
-                    element.dataset.scanPrimary,
-                    element.dataset.scanFallback,
-                    element.dataset.scanLastResort
-                ];
-                let scanSourceIndex = 0;
-                const loadNextScanSource = function() {
-                    if (scanSourceIndex >= scanSources.length) {
-                        previewScan.onerror = null;
-                        return;
-                    }
-                    previewScan.src = scanSources[scanSourceIndex];
-                    scanSourceIndex += 1;
-                };
-                previewScan.onerror = loadNextScanSource;
-                previewScan.alt = `Скан отзыва: ${element.dataset.title}`;
-                loadNextScanSource();
+                previewText.innerText = element.dataset.text || fallbackReviewText;
 
                 previewPanel.classList.add('active');
 
@@ -951,23 +934,20 @@
                     const sourceId = String(((i - 1) % sourcePhotoCount) + 1);
                     const sourceItem = reviewItems[sourceId] && typeof reviewItems[sourceId] === 'object' ? reviewItems[sourceId] : {};
                     const reviewerTitle = getReviewerTitle(sourceItem);
+                    const reviewText = getReviewText(sourceItem);
                     const imgSrc = sourceItem.photo && typeof sourceItem.photo === 'string'
                         ? sourceItem.photo
                         : `reviews/${sourceId}.jpeg`;
-                    const reviewScanSrc = sourceItem.scan && typeof sourceItem.scan === 'string'
-                        ? sourceItem.scan
-                        : `reviews/r${sourceId}.jpeg`;
                     const item = document.createElement('div');
                     item.className = 'gallery-item';
                     item.setAttribute('role', 'button');
                     item.setAttribute('tabindex', '0');
                     item.setAttribute('aria-label', `Открыть отзыв ${sourceId}: ${reviewerTitle}`);
 
+                    item.dataset.reviewId = sourceId;
                     item.dataset.img = imgSrc;
                     item.dataset.title = reviewerTitle;
-                    item.dataset.scanPrimary = reviewScanSrc;
-                    item.dataset.scanFallback = imgSrc;
-                    item.dataset.scanLastResort = imgSrc;
+                    item.dataset.text = reviewText;
 
                     item.addEventListener('click', function() {
                         openReview(item, false);
