@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Совместное представление трех мастеров: направления, опыт и возможность выбрать близкий формат работы.">
-    <title>Три мастера | Пространство практик и трансформации</title>
+    <meta name="description" content="Совместное представление четырех мастеров: направления, опыт и возможность выбрать близкий формат работы.">
+    <title>Четыре мастера | Пространство практик и трансформации</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +50,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 54px 0 70px;
+            padding: 30px 0 40px;
             background:
                 linear-gradient(135deg, rgba(253, 251, 251, 0.94) 0%, rgba(235, 237, 238, 0.94) 100%),
                 url("media1/persons/person_1.jpeg") center / cover no-repeat;
@@ -58,7 +58,7 @@
 
         .hero-top {
             max-width: 860px;
-            margin-bottom: 34px;
+            margin-bottom: 20px;
         }
 
         .subtitle {
@@ -73,9 +73,9 @@
 
         h1 {
             max-width: 760px;
-            margin-bottom: 18px;
+            margin-bottom: 12px;
             color: var(--primary-color);
-            font-size: 3rem;
+            font-size: 2.6rem;
             line-height: 1.08;
         }
 
@@ -84,14 +84,14 @@
             border-left: 4px solid var(--accent-color);
             padding-left: 20px;
             color: #444;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             line-height: 1.5;
         }
 
         .masters-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
             align-items: stretch;
         }
 
@@ -101,14 +101,14 @@
             min-height: 100%;
             overflow: hidden;
             border-top: 3px solid var(--accent-color);
-            border-radius: 10px;
+            border-radius: 8px;
             background: rgba(255, 255, 255, 0.92);
-            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
         }
 
         .master-photo {
             position: relative;
-            aspect-ratio: 4 / 5;
+            aspect-ratio: 1 / 1.05;
             background: #eee8e1;
         }
 
@@ -123,28 +123,33 @@
         .master-content {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px;
             flex: 1;
-            padding: 24px;
+            padding: 14px 14px 16px;
         }
 
         .master-content h2 {
-            color: var(--primary-color);
-            font-size: 1.75rem;
+            color: #8B6B3D;
+            font-size: 1.22rem;
             line-height: 1.1;
         }
 
         .master-role {
             color: #8B6B3D;
-            font-size: 0.86rem;
+            font-size: 0.73rem;
             font-weight: 800;
-            letter-spacing: 1.2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .master-description {
             color: var(--text-muted);
-            font-size: 0.98rem;
+            font-size: 0.78rem;
+            line-height: 1.42;
+            display: -webkit-box;
+            -webkit-line-clamp: 8;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .master-points {
@@ -154,10 +159,11 @@
 
         .master-points li {
             position: relative;
-            margin-bottom: 8px;
-            padding-left: 22px;
+            margin-bottom: 5px;
+            padding-left: 18px;
             color: #444;
-            font-size: 0.95rem;
+            font-size: 0.73rem;
+            line-height: 1.35;
         }
 
         .master-points li::before {
@@ -166,6 +172,12 @@
             left: 0;
             color: var(--accent-color);
             font-size: 1rem;
+        }
+
+        @media (max-width: 1160px) {
+            .masters-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
         }
 
         @media (max-width: 980px) {
@@ -191,15 +203,15 @@
 
         @media (max-width: 680px) {
             .masters-hero {
-                padding: 38px 0 52px;
+                padding: 28px 0 42px;
             }
 
             h1 {
-                font-size: 2.3rem;
+                font-size: 2.2rem;
             }
 
             .lead {
-                font-size: 1.05rem;
+                font-size: 1rem;
             }
 
             .master-card {
@@ -211,7 +223,7 @@
             }
 
             .master-content {
-                padding: 20px;
+                padding: 18px;
             }
         }
     </style>
@@ -220,8 +232,8 @@
     <main class="masters-hero">
         <div class="container">
             <div class="hero-top">
-                <span class="subtitle">Совместное пространство трех мастеров</span>
-                <h1>Три мастера для бережной работы с состоянием, телом и внутренней силой</h1>
+                <span class="subtitle">Совместное пространство четырех мастеров</span>
+                <h1>Четыре мастера для бережной работы с состоянием, телом и внутренней силой</h1>
                 <p class="lead">Здесь будет общее представление команды: кто эти мастера, с какими запросами они работают и как их направления дополняют друг друга.</p>
             </div>
 
@@ -231,56 +243,6 @@
                         <img src="media1/persons/person_1.jpeg" alt="Фото мастера 1" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co/800x1000/F3EDE7/4A3B5E?text=person_1.jpeg';">
                     </div>
                     <div class="master-content">
-                        <p class="master-role">Мастер 1</p>
-                        <h2>Ильвера Ситдикова</h2>
-                        <p class="master-description">
-                            Целитель, энергопрактик, мастер дыхательных практик - пранояма, ребёфинг, холотропное дыхание, духовный   проводник через родовые программы и отливки свинцом (более 13 лет) и Т-игру "Богатства рода - мой ресурсс".
-                            Моё имя переводится как «дарующая любовь и красоту».
-                            И это — моя суть. 
-                            Со мной человек возвращается к собственной красоте. Через дыхание. Через тело. Через встречу с душой.
-                            В моём поле люди перерождаются.
-                            Провожу в глубину — без теории, без воды. Через проживание и присутствие.
-                            Вскрываются родовые сценарии, уходят старые роли, страхи, зажатости. Возвращается сила, опора, ясность.
-                            «Перерождение через дыхание» — мой авторский целостный метод.
-                        </p>
-                        <ul class="master-points">
-                            <li>Направление работы</li>
-                            <li>Ключевой опыт или регалии</li>
-                            <li>Формат взаимодействия</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <article class="master-card">
-                    <div class="master-photo">
-                        <img src="media1/persons/person_2.jpeg" alt="Фото мастера 2" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co/800x1000/F3EDE7/4A3B5E?text=person_2.jpeg';">
-                    </div>
-                    <div class="master-content">
-                        <p class="master-role">Мастер 2</p>
-                        <h2>Роман Цыбрий</h2>
-                        <p class="master-description">
-                            Мастер Света и Огня, психолог, энергопрактик. 
-                            Создатель метода «Отсечь всё лишнее, усилить сильное».
-                            Работает с подсознанием через тело и уникальную технику 
-                            Огненного массажа. 
-                            Соединяя Access Bars, дыхательные процессы и энергию Стихий, 
-                            помогает мягко выжечь внутренние блоки и вернуть легкость, 
-                            силу и живой внутренний Свет.
-                        </p>
-                        <ul class="master-points">
-                            <li>Направление работы</li>
-                            <li>Ключевой опыт или регалии</li>
-                            <li>Формат взаимодействия</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <article class="master-card">
-                    <div class="master-photo">
-                        <img src="media1/persons/person_3.jpeg" alt="Фото мастера 3" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co/800x1000/F3EDE7/4A3B5E?text=person_3.jpeg';">
-                    </div>
-                    <div class="master-content">
-                        <p class="master-role">Мастер 3</p>
                         <h2>Инна Шульгина</h2>
                         <p class="master-description">
                             Проводник к твоей истинной сути.
@@ -295,11 +257,63 @@
                             Мы идем в глубину, чтобы ты могла сбросить кожу, отпустить лишнее и наконец-то встретиться с тем, кто ты есть на самом деле. 
                             Приди, чтобы сгореть. И вернись, чтобы воскреснуть ♥️
                         </p>
-                        <ul class="master-points">
-                            <li>Направление работы</li>
-                            <li>Ключевой опыт или регалии</li>
-                            <li>Формат взаимодействия</li>
-                        </ul>
+                    </div>
+                </article>
+
+                <article class="master-card">
+                    <div class="master-photo">
+                        <img src="media1/persons/person_2.jpeg" alt="Фото мастера 2" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co/800x1000/F3EDE7/4A3B5E?text=person_2.jpeg';">
+                    </div>
+                    <div class="master-content">
+                        <h2>Оксана Самсонова</h2>
+                        <p class="master-description">
+                            Меня зовут Оксана Самсонова, я помогаю людям прекратить 
+                            бег на выживание и освободиться от чужих ожиданий, чтобы 
+                            обрести истинную уверенность и реализовать свой масштаб. 
+                            Через бережные практики Кундалини и работу с внутренними 
+                            состояниями мы убираем ограничения, наполняя вас энергией 
+                            для перехода на новый, яркий уровень жизни.
+                            Если вы чувствуете готовность к переменам, я стану вашим 
+                            проводником на пути к свободе, осознанности и жизни,
+                            где ваши мечты становятся реальностью.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="master-card">
+                    <div class="master-photo">
+                        <img src="media1/persons/person_3.jpeg" alt="Фото мастера 3" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co/800x1000/F3EDE7/4A3B5E?text=person_3.jpeg';">
+                    </div>
+                    <div class="master-content">
+                        <h2>Ильвера Ситдикова</h2>
+                        <p class="master-description">
+                            Целитель, энергопрактик, мастер дыхательных практик - пранояма, ребёфинг, холотропное дыхание, духовный   проводник через родовые программы и отливки свинцом (более 13 лет) и Т-игру "Богатства рода - мой ресурсс".
+                            Моё имя переводится как «дарующая любовь и красоту».
+                            И это — моя суть. 
+                            Со мной человек возвращается к собственной красоте. Через дыхание. Через тело. Через встречу с душой.
+                            В моём поле люди перерождаются.
+                            Провожу в глубину — без теории, без воды. Через проживание и присутствие.
+                            Вскрываются родовые сценарии, уходят старые роли, страхи, зажатости. Возвращается сила, опора, ясность.
+                            «Перерождение через дыхание» — мой авторский целостный метод.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="master-card">
+                    <div class="master-photo">
+                        <img src="media1/persons/person_4.jpeg" alt="Фото мастера 4" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co/800x1000/F3EDE7/4A3B5E?text=person_4.jpeg';">
+                    </div>
+                    <div class="master-content">
+                        <h2>Роман Цыбрий</h2>
+                        <p class="master-description">
+                            Мастер Света и Огня, психолог, энергопрактик. 
+                            Создатель метода «Отсечь всё лишнее, усилить сильное».
+                            Работает с подсознанием через тело и уникальную технику 
+                            Огненного массажа. 
+                            Соединяя Access Bars, дыхательные процессы и энергию Стихий, 
+                            помогает мягко выжечь внутренние блоки и вернуть легкость, 
+                            силу и живой внутренний Свет.
+                        </p>
                     </div>
                 </article>
             </section>
