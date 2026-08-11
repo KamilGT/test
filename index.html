@@ -131,6 +131,39 @@
             flex-wrap: wrap;
         }
 
+        .hero-flex {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .hero-flex-text {
+            flex: 1 1 55%;
+            min-width: 0;
+        }
+
+        .hero-flex-text .hero-description {
+            margin-bottom: 26px;
+        }
+
+        .hero-photo-wrap {
+            flex: 1 1 40%;
+            max-width: 420px;
+            aspect-ratio: 1169 / 1280;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 16px 34px rgba(74, 59, 94, 0.18);
+        }
+
+        .hero-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: top center;
+        }
+
         .btn {
             display: inline-block;
             background-color: var(--primary-color);
@@ -293,6 +326,37 @@
             .master-photo {
                 aspect-ratio: 1 / 1.02;
                 min-height: 0;
+            }
+
+            .hero-flex {
+                gap: 24px;
+            }
+
+            .hero-photo-wrap {
+                max-width: 320px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .hero-flex {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .hero-photo-wrap {
+                order: -1;
+                width: 100%;
+                max-width: none;
+                aspect-ratio: 1169 / 1280;
+                max-height: 420px;
+            }
+
+            .hero-flex-text {
+                width: 100%;
+            }
+
+            .hero-flex-text .hero-description {
+                margin-bottom: 18px;
             }
         }
 
@@ -687,23 +751,44 @@
         <div class="container">
             <div class="hero-top">
                 <span class="subtitle">Раскрой свою внутреннюю силу</span>
-                <h1>ТриOгня | Пространство практик и трансформации</h1>
-                <div class="hero-badges">
-                    <a href="#" class="hero-badge">💎 НАСТАВНИЧЕСТВО</a>
-                    <a href="#" class="hero-badge">⚱️ ОТЛИВКА СВИНЦОМ</a>
-                    <a href="#" class="hero-badge">⛰️ ИРЕМЕЛЬ</a>
-                    <a href="#" class="hero-badge">🌿 СЕМЕЙНЫЙ РЕТРИТ - СИЛА РОДА</a>
-                    <a href="#" class="hero-badge">🔥 ОГНЕННЫЙ РЕТРИТ</a>
-                </div>
-                <p class="hero-description">
-                    Помогу восстановить состояние и сбалансировать сферы жизни.
-                    <b>Готов(а) шагнуть в трансформацию со мной?</b>
-                </p>
+                <h1>Ретрит - возрождение к себе через огонь</h1>
 
-                <div class="hero-buttons">
-                    <a href="https://t.me" class="btn">ЗАПИСАТЬСЯ</a>
-                    <a href="https://t.me" class="btn-outline" target="_blank" rel="noopener noreferrer">МОЙ КАНАЛ</a>
+                <div class="hero-flex">
+                    <div class="hero-flex-text">
+
+                        <div class="hero-badges">
+                            <a href="#" class="hero-badge">🔥 ОГНЕННЫЙ РЕТРИТ</a>
+                            <a href="#" class="hero-badge">⛰️ ЮЖНЫЙ УРАЛ</a>
+                            <a href="#" class="hero-badge">🏠 ПРОЖИВАНИЕ</a>
+                            <!-- <a href="#" class="hero-badge">💎 🌿 ТРИ МАСТЕРА</a> -->
+                        </div>
+
+                        <div class="results-block">
+                            <ul class="results-list">
+                                <li>ЮЖНЫЙ УРАЛ. У ПОДНОЖИЯ ГОР - БАТЮШКА ИРЕМЕЛЬ И МАТУШКА ЗИГАЛЬГА. ЛАРКИНО УЩЕЛЬЕ.</li>
+                                <li>7 дней глубокого перезагрузочного путешествия — к своим смыслам, энергии и внутренней опоре.</li>
+                                <li>Камерный формат</li>
+                                <li>Авторская программа</li>
+                                <li>Утренние медитации</li>
+                            </ul>
+                        </div>
+
+                        <div class="hero-buttons">
+                            <a href="https://t.me" class="btn">ЗАПИСАТЬСЯ</a>
+                            <!-- <a href="https://t.me" class="btn-outline" target="_blank" rel="noopener noreferrer">МОЙ КАНАЛ</a> -->
+                        </div>
+                    </div>
+
+                    <div class="hero-photo-wrap">
+                        <img src="media/photo1.jpeg" alt="Общее фото с текстом" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co';">
+                    </div>
                 </div>
+
+                <div class="hero-description">
+                    <!-- Помогу восстановить состояние и сбалансировать сферы жизни. -->
+                    <b>Проводники к твоей истинной сути</b>
+                </div>
+
             </div>
 
             <section class="masters-grid" aria-label="Мастера">
@@ -716,8 +801,8 @@
                         <h2>Инна Шульгина</h2>
                         <p class="master-teaser">Проводник к твоей истинной сути.</p>
                         <ul class="master-points">
-                            <li>Кашмирский массаж</li>
-                            <li>Мистерии огня</li>
+                            <li>Огненный ритуал массаж</li>
+                            <li>Энерготерапевт</li>
                         </ul>
                     </div>
                 </article>
@@ -758,15 +843,20 @@
     <section class="results-section">
         <div class="container">
             <div class="results-block">
-                <h2 class="results-title">Что ты получаешь в результате</h2>
+                <h2 class="results-title">Даты</h2>
                 <ul class="results-list">
-                    <li>Возвращение контакта с собой</li>
-                    <li>Спокойную уверенность в выборе</li>
-                    <li>Больше энергии и устойчивости</li>
-                    <li>Ощущение, что ты снова живёшь свою жизнь</li>
-                    <li>События вокруг начнут сами выстраиваться по наилучшему варианту на данный момент времени</li>
+                    <li>С 23 по 30 августа 2026г.</li>
+                    <li>С 01 по 08 сентября 2026г.</li>
+                </ul>
+
+                <h2 class="results-title">Цены</h2>
+                <ul class="results-list">
+                    <li>100 000 рублей</li>
+                    <li>30% предоплаты</li>
+                    <li>Кто оплачивает сразу - 10% скидки</li>
                 </ul>
             </div>
+            
         </div>
     </section>
 
@@ -810,7 +900,6 @@
                 <a href="https://youtube.com" class="social-link yt" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
 
-            <!-- Текст прописан напрямую в HTML -->
             <p>&copy; 2026 Пространство практик и трансформации «ТриОгня». Все права защищены.</p>
         </div>
     </footer>
