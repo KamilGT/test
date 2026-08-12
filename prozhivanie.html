@@ -216,6 +216,7 @@
         .amenity-photos {
             flex: 1 1 48%;
             display: flex;
+            align-items: flex-start;
             gap: 12px;
         }
 
@@ -223,7 +224,7 @@
 
         .amenity-photos img {
             width: 100%;
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 3 / 4;
             object-fit: cover;
             border-radius: 12px;
             box-shadow: 0 12px 26px rgba(74, 59, 94, 0.12);
@@ -246,6 +247,20 @@
             font-size: 1.02rem;
         }
 
+        .amenity-extra {
+            max-width: 300px;
+            margin: -10px 0 40px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 26px rgba(74, 59, 94, 0.12);
+        }
+
+        .amenity-extra img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
         @media (max-width: 760px) {
             .amenity-row,
             .amenity-row.reverse {
@@ -254,6 +269,11 @@
 
             .amenity-photos.single {
                 max-width: none;
+            }
+
+            .amenity-extra {
+                max-width: none;
+                margin: -20px 0 36px;
             }
         }
 
@@ -400,9 +420,8 @@
 
             <div class="amenities">
                 <div class="amenity-row">
-                    <div class="amenity-photos">
-                        <img src="media/residence/residence11.jpeg" alt="Дом снаружи" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
-                        <img src="media/residence/residence15.jpeg" alt="Дом снаружи" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence11.jpeg" alt="Дом снаружи" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
                     </div>
                     <div class="amenity-text">
                         <h4>Дом</h4>
@@ -412,7 +431,17 @@
 
                 <div class="amenity-row reverse">
                     <div class="amenity-photos single">
-                        <img src="media/residence/residence12.jpeg" alt="Комнаты" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                        <img src="media/residence/residence15.jpeg" alt="Дом снаружи" loading="lazy" style="aspect-ratio:815/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h4>Дом</h4>
+                        <p>Мы живём в уютном деревянном доме у подножия гор — тихое, тёплое место, куда хочется возвращаться после практик и восхождений.</p>
+                    </div>
+                </div>
+
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence14.jpeg" alt="Комнаты" loading="lazy" style="aspect-ratio:951/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
                     </div>
                     <div class="amenity-text">
                         <h4>Комнаты</h4>
@@ -420,10 +449,19 @@
                     </div>
                 </div>
 
+                <div class="amenity-row reverse">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence13.jpeg" alt="Терраса" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h4>Терраса</h4>
+                        <p>Открытая терраса со стороны дома — место для утреннего чая, разговоров и тишины с видом на горы.</p>
+                    </div>
+                </div>
+
                 <div class="amenity-row">
-                    <div class="amenity-photos">
-                        <img src="media/residence/residence13.jpeg" alt="Терраса" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
-                        <img src="media/residence/residence17.jpeg" alt="Терраса" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence16.jpeg" alt="Терраса" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
                     </div>
                     <div class="amenity-text">
                         <h4>Терраса</h4>
@@ -433,7 +471,7 @@
 
                 <div class="amenity-row reverse">
                     <div class="amenity-photos single">
-                        <img src="media/residence/residence14.jpeg" alt="Кухня" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                        <img src="media/residence/residence12.jpeg" alt="Кухня" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
                     </div>
                     <div class="amenity-text">
                         <h4>Кухня</h4>
@@ -443,7 +481,7 @@
 
                 <div class="amenity-row">
                     <div class="amenity-photos single">
-                        <img src="media/residence/residence16.jpeg" alt="Санузел" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                        <img src="media/residence/residence17.jpeg" alt="Санузел" loading="lazy" style="aspect-ratio:817/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
                     </div>
                     <div class="amenity-text">
                         <h4>Санузел</h4>
@@ -510,33 +548,62 @@
 
             <p class="rt-text">Баня здесь — не просто развлечение. Это часть пути. Встреча с жаром, с телом, с собой. Мы входим в парную четыре раза. И каждый раз — по-новому.</p>
 
-            <h3 class="rt-subtitle">Первая баня (в первый день)</h3>
-            <p class="rt-text">После дороги, после первых знакомств, после того как дыхание выровнялось — мы встречаемся с теплом.</p>
-            <p class="rt-text">Оно не торопит. Оно согревает тело, которое давно забыло, что такое мягкость. Напряжение тает. Ты выдыхаешь впервые по-настоящему.</p>
+            <div class="amenities">
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence21.jpeg" alt="Баня" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">Первая баня (в первый день)</h3>
+                        <p>После дороги, после первых знакомств, после того как дыхание выровнялось — мы встречаемся с теплом.</p>
+                        <p>Оно не торопит. Оно согревает тело, которое давно забыло, что такое мягкость. Напряжение тает. Ты выдыхаешь впервые по-настоящему.</p>
+                    </div>
+                </div>
 
-            <h3 class="rt-subtitle">Вторая и третья баня</h3>
-            <p class="rt-text">🤩 Тело уже помнит жар. Оно доверяет.</p>
-            <p class="rt-text">Здесь мы добавляем соль. Крупная, живая, сухая — она ложится на разогретую кожу и начинает свой диалог с тобой.</p>
-            <p class="rt-text">Соль вбирает всё, что держалось в мышцах годами: усталость, напряжение, чужие голоса, старые сценарии. Она очищает не тело — она освобождает пространство внутри.</p>
-            <p class="rt-text">🤩 После соли — приходит время масел.</p>
-            <p class="rt-text">Горячие, ароматные, живые. С нотами трав, цветов и земли. Они проникают глубоко — туда, где живёт уставшая душа. Они возвращают коже эластичность, телу — память о жизни, а тебе — ощущение, что о тебе заботятся.</p>
-            <p class="rt-text">Мастер работает руками в такт твоему дыханию. Каждое движение — как разговор. Глубокий. Честный. Без лишних слов.</p>
+                <div class="amenity-row reverse">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence22.jpeg" alt="Баня" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">Вторая и третья баня</h3>
+                        <p>🤩 Тело уже помнит жар. Оно доверяет.</p>
+                        <p>Здесь мы добавляем соль. Крупная, живая, сухая — она ложится на разогретую кожу и начинает свой диалог с тобой. Соль вбирает всё, что держалось в мышцах годами: усталость, напряжение, чужие голоса, старые сценарии. Она очищает не тело — она освобождает пространство внутри.</p>
+                    </div>
+                </div>
 
-            <h3 class="rt-subtitle">Четвёртая баня (после восхождения на гору Иремель)</h3>
-            <p class="rt-text">Завершающая.</p>
-            <p class="rt-text">🤩 Тело уже прошло путь: расслабление, выдыхание, соль убрала лишнее, масло наполнило новым.</p>
-            <p class="rt-text">В четвёртый раз ты входишь не за очищением — ты входишь за состоянием. Когда внутри тихо. Когда тело лёгкое. Когда ты чувствуешь себя целым. А после — не просто чистота, а Состояние.</p>
-            <p class="rt-text">🤩 Ты выходишь из бани другим. Не потому что тебя «очистили». А потому что ты разрешил себе быть.</p>
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence23.jpeg" alt="Баня" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <p>🤩 После соли — приходит время масел. Горячие, ароматные, живые. С нотами трав, цветов и земли. Они проникают глубоко — туда, где живёт уставшая душа. Они возвращают коже эластичность, телу — память о жизни, а тебе — ощущение, что о тебе заботятся.</p>
+                        <p>Мастер работает руками в такт твоему дыханию. Каждое движение — как разговор. Глубокий. Честный. Без лишних слов.</p>
+                    </div>
+                </div>
+
+                <div class="amenity-row reverse">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence24.jpeg" alt="Баня" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">Четвёртая баня (после восхождения на гору Иремель)</h3>
+                        <p>Завершающая.</p>
+                        <p>🤩 Тело уже прошло путь: расслабление, выдыхание, соль убрала лишнее, масло наполнило новым.</p>
+                    </div>
+                </div>
+
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence25.jpeg" alt="Баня" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <p>В четвёртый раз ты входишь не за очищением — ты входишь за состоянием. Когда внутри тихо. Когда тело лёгкое. Когда ты чувствуешь себя целым. А после — не просто чистота, а Состояние.</p>
+                        <p>🤩 Ты выходишь из бани другим. Не потому что тебя «очистили». А потому что ты разрешил себе быть.</p>
+                    </div>
+                </div>
+            </div>
 
             <p class="rt-quote">Баня на ретрите — это не процедура.<br>Это встреча с собой.<br>Четыре раза. Четыре шага.<br>Одно возвращение.</p>
-
-            <div class="photo-masonry">
-                <figure><img src="media/residence/residence21.jpeg" alt="Баня на ретрите" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x520';"></figure>
-                <figure><img src="media/residence/residence22.jpeg" alt="Баня на ретрите" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x360';"></figure>
-                <figure><img src="media/residence/residence23.jpeg" alt="Баня на ретрите" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x480';"></figure>
-                <figure><img src="media/residence/residence24.jpeg" alt="Баня на ретрите" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x400';"></figure>
-                <figure><img src="media/residence/residence25.jpeg" alt="Баня на ретрите" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x460';"></figure>
-            </div>
         </div>
     </section>
 
