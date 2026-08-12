@@ -75,10 +75,17 @@
 
         h1 {
             max-width: 760px;
-            margin: 0 auto 30px;
+            margin: 0 auto 18px;
             color: var(--primary-color);
             font-size: 2.6rem;
             line-height: 1.08;
+        }
+
+        .hero-lead {
+            max-width: 620px;
+            margin: 0 auto 30px;
+            font-size: 1.12rem;
+            color: #555;
         }
 
         .hero-badges {
@@ -159,7 +166,7 @@
 
         .hero-flex {
             display: flex;
-            align-items: center;
+            align-items: stretch;
             gap: 50px;
             margin-bottom: 28px;
             text-align: left;
@@ -168,6 +175,13 @@
         .hero-flex-text {
             flex: 1 1 50%;
             min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
         }
 
         .hero-flex-text .hero-description {
@@ -231,11 +245,250 @@
             color: var(--text-light);
         }
 
+        /* ---------- Цитата-тизер про огонь + видео ---------- */
+        .fire-media-row {
+            display: flex;
+            align-items: center;
+            gap: 44px;
+            margin: 0 auto 34px;
+            text-align: left;
+        }
+
+        .fire-video-wrap {
+            flex: 1 1 42%;
+            max-width: 380px;
+            aspect-ratio: 1169 / 1280;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 16px 34px rgba(74, 59, 94, 0.18);
+            background: #000;
+        }
+
+        .fire-video-wrap video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .fire-quote {
+            flex: 1 1 50%;
+            margin: 0;
+            text-align: left;
+            padding: 28px 32px;
+            background: linear-gradient(135deg, rgba(197, 168, 128, 0.1), rgba(74, 59, 94, 0.05));
+            border: 1px solid rgba(197, 168, 128, 0.3);
+            border-radius: 16px;
+        }
+
+        .fire-quote p {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.28rem;
+            line-height: 1.5;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+
+        .fire-quote-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #8B6B3D;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .fire-quote-link:hover {
+            border-color: #8B6B3D;
+        }
+
+        @media (max-width: 700px) {
+            .fire-media-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .fire-video-wrap {
+                max-width: none;
+                width: 100%;
+                aspect-ratio: 16 / 10;
+            }
+
+            .fire-quote {
+                text-align: center;
+                width: 100%;
+                padding: 26px 24px;
+            }
+        }
+
+        /* ---------- Карточки-навигация по разделам ---------- */
+        .nav-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 54px 0 10px;
+        }
+
+        .nav-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
+            border-radius: 16px;
+            padding: 30px 32px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 34px rgba(74, 59, 94, 0.18);
+        }
+
+        .nav-card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .nav-card-arrow {
+            margin-top: auto;
+            font-weight: 700;
+            font-size: 0.88rem;
+        }
+
+        .nav-card-featured {
+            background: linear-gradient(135deg, var(--primary-color), #5c4a73);
+            color: #fff;
+        }
+
+        .nav-card-featured h3 {
+            color: #fff;
+            font-size: 1.7rem;
+            margin: 4px 0 10px;
+        }
+
+        .nav-card-featured p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            max-width: 540px;
+            margin-bottom: 18px;
+        }
+
+        .nav-card-featured .nav-card-arrow {
+            color: var(--accent-color);
+        }
+
+        .nav-cards-secondary {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .nav-card-small {
+            background: #fff;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-card-small h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin: 2px 0 8px;
+        }
+
+        .nav-card-small p {
+            color: #555;
+            font-size: 0.92rem;
+            margin-bottom: 16px;
+        }
+
+        .nav-card-small .nav-card-arrow {
+            color: #8B6B3D;
+        }
+
+        @media (max-width: 600px) {
+            .nav-cards-secondary {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-card {
+                padding: 24px 24px;
+            }
+        }
+
+        /* ---------- Что входит в ретрит ---------- */
+        .whats-included {
+            padding: 64px 0 10px;
+            background-color: #fff;
+        }
+
+        .whats-included .results-title {
+            text-align: center;
+        }
+
+        .included-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .included-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 1rem;
+            color: #444;
+            background: var(--bg-light);
+            padding: 16px 18px;
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-color);
+            line-height: 1.4;
+        }
+
+        .included-list li span {
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+        @media (max-width: 700px) {
+            .included-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ---------- Финальный CTA перед футером ---------- */
+        .final-cta {
+            padding: 70px 0 90px;
+            text-align: center;
+            background: linear-gradient(135deg, #FDFBFB 0%, #EBEDEE 100%);
+        }
+
+        .final-cta h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            color: var(--primary-color);
+            margin-bottom: 14px;
+        }
+
+        .final-cta p {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 28px;
+        }
+
         .masters-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 16px;
             align-items: stretch;
+            margin-top: 54px;
         }
 
         .master-card {
@@ -802,23 +1055,17 @@
     <main class="masters-hero">
         <div class="container">
             <div class="hero-top">
-                <span class="subtitle">Раскрой свою внутреннюю силу</span>
-                <h1>Ретрит - возрождение к себе через огонь</h1>
+                <span class="subtitle">🔥 Огненный ретрит</span>
+                <h1>Перерождение Огнём</h1>
+                <p class="hero-lead">Сгореть, чтобы возродиться — 7 дней глубокого перезагрузочного путешествия к своим смыслам, энергии и внутренней опоре.</p>
 
                 <div class="hero-flex">
                     <div class="hero-flex-text">
-                        <div class="hero-badges">
-                            <a href="ogneniy-retrit.html" class="hero-badge">🔥 ОГНЕННЫЙ РЕТРИТ</a>
-                            <a href="yuzhny-ural.html" class="hero-badge">⛰️ ЮЖНЫЙ УРАЛ</a>
-                            <a href="prozhivanie.html" class="hero-badge">🏠 ПРОЖИВАНИЕ</a>
-                            <!-- <a href="#" class="hero-badge">💎 🌿 ТРИ МАСТЕРА</a> -->
-                        </div>
-
                         <div class="results-block">
                             <ul class="results-list">
-                                <li>ЮЖНЫЙ УРАЛ. У ПОДНОЖИЯ ГОР - БАТЮШКА ИРЕМЕЛЬ И МАТУШКА ЗИГАЛЬГА. ЛАРКИНО УЩЕЛЬЕ.</li>
-                                <li>7 дней глубокого перезагрузочного путешествия — к своим смыслам, энергии и внутренней опоре.</li>
-                                <li>Камерный формат</li>
+                                <li>Огненный ритуал перерождения — сердце программы ретрита</li>
+                                <li>Южный Урал. У подножия гор — Батюшка Иремель и Матушка Зигальга. Ларкино ущелье.</li>
+                                <li>Камерный формат — до 10 участников</li>
                                 <li>Авторская программа</li>
                                 <li>Утренние медитации</li>
                             </ul>
@@ -835,11 +1082,47 @@
                     </div>
                 </div>
 
-                <div class="hero-transition">
-                    Проводники к твоей истинной сути
+                <div class="fire-media-row">
+                    <div class="fire-video-wrap">
+                        <video src="media/video1.mp4" autoplay muted loop playsinline poster="media/photo1.jpeg"></video>
+                    </div>
+                    <div class="fire-quote">
+                        <p>«Огонь — это не просто стихия. Это посредник между материальным и духовным, символ высшей энергии, способной преобразить человека и зажечь внутренний свет».</p>
+                        <a href="ogneniy-retrit.html" class="fire-quote-link">Что такое огненный ритуал →</a>
+                    </div>
                 </div>
 
             </div>
+
+            <div class="nav-cards">
+                <a href="ogneniy-retrit.html" class="nav-card nav-card-featured">
+                    <span class="nav-card-icon">🔥</span>
+                    <h3>Огненный ретрит</h3>
+                    <p>Сжигая прошлое, создавая будущее — программа, ритуалы и практики трансформации</p>
+                    <span class="nav-card-arrow">Подробнее →</span>
+                </a>
+
+                <div class="nav-cards-secondary">
+                    <a href="yuzhny-ural.html" class="nav-card nav-card-small">
+                        <span class="nav-card-icon">⛰️</span>
+                        <h4>Южный Урал</h4>
+                        <p>Тюлюк, Иремель, Зигальга, Ларкино ущелье</p>
+                        <span class="nav-card-arrow">Подробнее →</span>
+                    </a>
+                    <a href="prozhivanie.html" class="nav-card nav-card-small">
+                        <span class="nav-card-icon">🏠</span>
+                        <h4>Проживание</h4>
+                        <p>Дом, четыре бани, вегетарианский стол</p>
+                        <span class="nav-card-arrow">Подробнее →</span>
+                    </a>
+                </div>
+            </div>
+
+             <div class="nav-cards">
+                <div class="hero-transition">
+                    Проводники к твоей истинной сути
+                </div>
+             </div>
 
             <section class="masters-grid" aria-label="Мастера">
                 <article class="master-card">
@@ -890,6 +1173,20 @@
         </div>
     </main>
 
+    <section class="whats-included">
+        <div class="container">
+            <h2 class="results-title">Что входит в ретрит</h2>
+            <ul class="included-list">
+                <li><span>🔥</span> Огненный массаж-ритуал — 3–4 часа, несколько дней подряд</li>
+                <li><span>🧂</span> Баня четыре раза: соль, масла, контраст жара и холода</li>
+                <li><span>🌬️</span> Глубинные дыхательные практики — пранаяма, холотропное дыхание</li>
+                <li><span>⛰️</span> Восхождение на Иремель и купание в Ларкином ущелье</li>
+                <li><span>✨</span> Ритуал «Не Бары» и Инициация в белых одеждах</li>
+                <li><span>🌅</span> Утренние медитации на рассвете</li>
+            </ul>
+        </div>
+    </section>
+
     <section class="results-section">
         <div class="container">
             <div class="results-cards">
@@ -910,6 +1207,14 @@
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Добро пожаловать в свой огонь</h2>
+            <p>Позвольте себе сгореть, чтобы возродиться.</p>
+            <a href="https://t.me" class="btn" target="_blank" rel="noopener noreferrer">Записаться</a>
         </div>
     </section>
 
