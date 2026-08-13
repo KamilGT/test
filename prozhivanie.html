@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Проживание, питание и баня на ретрите «ТриОгня» — что взять с собой и как проходит банный ритуал.">
-    <title>Проживание | ТриОгня</title>
+    <meta name="description" content="Проживание, питание и баня на ретрите — что взять с собой и как проходит банный ритуал.">
+    <title>Проживание | Ретриты</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -307,6 +307,7 @@
         @media (max-width: 480px) {
             .photo-masonry { column-count: 1; }
             .ural-block { padding: 44px 0; }
+            .cta-call { align-items: center; text-align: center; }
         }
 
         /* ---------- CTA ---------- */
@@ -319,6 +320,39 @@
             color: #555;
             font-size: 1.05rem;
         }
+
+        .cta-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-call {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: left;
+        }
+
+        .cta-call span {
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.75rem;
+            color: #8B6B3D;
+            font-weight: 600;
+        }
+
+        .cta-call a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .cta-call a:hover { text-decoration: underline; }
 
         .btn {
             display: inline-block;
@@ -337,15 +371,17 @@
 
         .btn:hover { background-color: transparent; color: var(--primary-color); }
 
-        /* ---------- Footer ---------- */
+       /* --- Фирменный Footer на основе вашего CSS --- */
         footer {
             padding: 40px 0;
             text-align: center;
             background: #333;
             color: #888;
             font-size: 0.9rem;
+            margin-top: auto;
         }
 
+        /* Контейнер соцсетей */
         .social-icons {
             display: flex;
             justify-content: center;
@@ -355,6 +391,7 @@
             flex-wrap: wrap;
         }
 
+        /* Круглые кнопки иконок */
         .social-link {
             width: 45px;
             height: 45px;
@@ -369,19 +406,26 @@
             transition: all 0.3s ease;
         }
 
-        .social-link:hover { transform: translateY(-5px); color: #fff; }
-
+        /* Анимация при наведении */
+        .social-link:hover { 
+            transform: translateY(-5px); 
+            color: #fff;
+        }
+        
+        /* Единый акцентный hover в фирменной палитре */
         .social-link.tg:hover,
         .social-link.wa:hover,
         .social-link.inst:hover,
         .social-link.vk:hover,
         .social-link.yt:hover,
+        .social-link.phone:hover,
         .social-link.mail:hover { background: var(--accent-color); color: #2D2D2D; }
 
+        /* Кнопка MAX */
         .social-link.max { background: #20232a; border: 1px solid #3a3f4b; }
         .social-link.max:hover { background: var(--accent-color); }
         .social-link.max:hover .max-icon { color: #2D2D2D; }
-
+        
         .max-icon {
             font-family: "Arial Black", Arial, sans-serif;
             font-size: 0.65rem;
@@ -395,7 +439,7 @@
 
     <nav class="site-nav">
         <div class="container" style="max-width:1200px;">
-            <a href="index.html" class="site-logo">ТриОгня</a>
+            <a href="index.html" class="site-logo">Ретриты</a>
             <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> На главную</a>
         </div>
     </nav>
@@ -403,7 +447,7 @@
     <header class="page-hero">
         <div class="container">
             <span class="page-overline">🏠 Проживание</span>
-            <h1>Дом, стол и баня на время ретрита</h1>
+            <h1>Проживание и баня, что взять собой.</h1>
             <p class="page-lead">Всё, что нужно знать о быте: где вы будете жить, как питаться, что взять с собой в горы и как устроен банный ритуал — четыре встречи с огнём и телом.</p>
         </div>
     </header>
@@ -434,8 +478,8 @@
                         <img src="media/residence/residence15.jpeg" alt="Дом снаружи" loading="lazy" style="aspect-ratio:815/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
                     </div>
                     <div class="amenity-text">
-                        <h4>Дом</h4>
-                        <p>Мы живём в уютном деревянном доме у подножия гор — тихое, тёплое место, куда хочется возвращаться после практик и восхождений.</p>
+                        <h4>Баня</h4>
+                        <p>Баня здесь — не просто развлечение. Это часть пути. Встреча с жаром, с телом, с собой.</p>
                     </div>
                 </div>
 
@@ -451,16 +495,6 @@
 
                 <div class="amenity-row reverse">
                     <div class="amenity-photos single">
-                        <img src="media/residence/residence13.jpeg" alt="Терраса" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
-                    </div>
-                    <div class="amenity-text">
-                        <h4>Терраса</h4>
-                        <p>Открытая терраса со стороны дома — место для утреннего чая, разговоров и тишины с видом на горы.</p>
-                    </div>
-                </div>
-
-                <div class="amenity-row">
-                    <div class="amenity-photos single">
                         <img src="media/residence/residence16.jpeg" alt="Терраса" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
                     </div>
                     <div class="amenity-text">
@@ -469,7 +503,7 @@
                     </div>
                 </div>
 
-                <div class="amenity-row reverse">
+                <div class="amenity-row">
                     <div class="amenity-photos single">
                         <img src="media/residence/residence12.jpeg" alt="Кухня" loading="lazy" style="aspect-ratio:960/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
                     </div>
@@ -479,7 +513,7 @@
                     </div>
                 </div>
 
-                <div class="amenity-row">
+                <div class="amenity-row reverse">
                     <div class="amenity-photos single">
                         <img src="media/residence/residence17.jpeg" alt="Санузел" loading="lazy" style="aspect-ratio:817/1280;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
                     </div>
@@ -489,47 +523,90 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <h3 class="rt-subtitle">❗️ Что взять с собой на ретрит «Перерождение Огнём»</h3>
-            <p class="rt-text"><b>Подъём на гору Иремель</b></p>
+    <!-- ===== Блок: Что взять с собой на ретрит ===== -->
+    <section class="ural-block">
+        <div class="container">
+            <span class="ural-block-label">Подготовка</span>
+            <h2 class="ural-block-title">❗️Что взять с собой❗️ на ретрит «Перерождение Огнём»</h2>
+            <p class="rt-text" style="font-weight:600; color: var(--primary-color);">Подъём на гору Иремель</p>
 
             <p class="rt-text">Друзья! Погода в горах переменчива, нас ждут глубокие практики, встреча со стихиями и внутренняя работа. К подготовке стоит подойти осознанно — чтобы тело было свободно, а дух ни на что не отвлекался.</p>
 
-            <h3 class="rt-subtitle">1️⃣ Обувь и одежда для подъёма</h3>
-            <p class="rt-text">Обувь — самое важное. Выбирай кроссовки или треккинговые ботинки с надёжной фиксацией голеностопа. Нога должна быть защищена от травм на каменистых тропах.</p>
-            <p class="rt-text">Приветствуются ортопедические стельки — если ты к ним привык, бери с собой.</p>
-            <p class="rt-text"><b>❗️ Обязательно</b></p>
-            <ul class="tag-list">
-                <li>дождевик (погода на вершине меняется за минуты)</li>
-                <li>жилетка с капюшоном (не сковывает движения и спасает от ветра), или непродуваемая куртка</li>
-                <li>небольшой рюкзак для личных вещей на подъём</li>
-                <li>сидушка под попу</li>
-            </ul>
+            <div class="amenities">
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence31.jpeg" alt="Обувь и одежда для подъёма" loading="lazy" style="aspect-ratio:3/4;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">1️⃣ Обувь и одежда для подъёма</h3>
+                        <p>Обувь — самое важное. Выбирай кроссовки или треккинговые ботинки с надёжной фиксацией голеностопа. Нога должна быть защищена от травм на каменистых тропах.</p>
+                        <p>Приветствуются ортопедические стельки — если ты к ним привык, бери с собой.</p>
+                        <p style="margin-top:12px;"><b>❗️ Обязательно</b></p>
+                        <ul class="tag-list">
+                            <li>дождевик (погода на вершине меняется за минуты)</li>
+                            <li>жилетка с капюшоном (не сковывает движения и спасает от ветра), или непродуваемая куртка</li>
+                            <li>небольшой рюкзак для личных вещей на подъём</li>
+                            <li>сидушка под попу</li>
+                        </ul>
+                    </div>
+                </div>
 
-            <h3 class="rt-subtitle">2️⃣ Питьё</h3>
-            <p class="rt-text">Возьми с собой:</p>
-            <ul class="tag-list">
-                <li>термос с горячим чаем или водой и вкусняшки</li>
-                <li>бутылочку для негазированной воды (она всегда должна быть под рукой)</li>
-            </ul>
+                <div class="amenity-row reverse">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence32.jpeg" alt="Питьё в поход" loading="lazy" style="aspect-ratio:3/4;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">2️⃣ Питьё</h3>
+                        <p>Возьми с собой:</p>
+                        <ul class="tag-list">
+                            <li>термос с горячим чаем или водой и вкусняшки</li>
+                            <li>бутылочку для негазированной воды (она всегда должна быть под рукой)</li>
+                        </ul>
+                    </div>
+                </div>
 
-            <h3 class="rt-subtitle">3️⃣ Баня и купание в Ларкином ущелье</h3>
-            <ul class="ural-list">
-                <li>Нас ждёт купель на подъёме и обливания в Ларкином ущелье. Вода холодная, бельё сохнет долго — бери два купальника (или плавки), чтобы чередовать. Сланцы или шлёпки.</li>
-                <li>После бани и контрастных процедур пригодится лёгкий халат — махровый или вафельный, чтобы укутаться и в тепле дойти до места отдыха.</li>
-            </ul>
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence33.jpeg" alt="Баня и купание в Ларкином ущелье" loading="lazy" style="aspect-ratio:3/4;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">3️⃣ Баня и купание в Ларкином ущелье</h3>
+                        <ul class="ural-list">
+                            <li>Нас ждёт купель на подъёме и обливания в Ларкином ущелье. Вода холодная, бельё сохнет долго — бери два купальника (или плавки), чтобы чередовать. Сланцы или шлёпки.</li>
+                            <li>После бани и контрастных процедур пригодится лёгкий халат — махровый или вафельный, чтобы укутаться и в тепле дойти до места отдыха.</li>
+                        </ul>
+                    </div>
+                </div>
 
-            <h3 class="rt-subtitle">4️⃣ Особый пункт — для ритуалов</h3>
-            <p class="rt-text"><b>Белая одежда обязательна ❗️</b></p>
-            <p class="rt-text">Женщинам: белое платье, туника или свободный светлый наряд.<br>Мужчинам: белая рубашка, футболка, льняной костюм — любая одежда светлых, белых тонов.</p>
-            <p class="rt-text">Это для Инициации и Заключительного Огненного Ритуала. Белый цвет — символ чистоты, перерождения и нового начала. В этом облачении мы встретим рассвет и запечатаем трансформацию.</p>
+                <div class="amenity-row reverse">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence34.jpeg" alt="Белая одежда для ритуала" loading="lazy" style="aspect-ratio:3/4;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">4️⃣ Особый пункт — для ритуалов</h3>
+                        <p><b>Белая одежда обязательна ❗️</b></p>
+                        <p>Женщинам: белое платье, туника или свободный светлый наряд.<br>Мужчинам: белая рубашка, футболка, льняной костюм — любая одежда светлых, белых тонов.</p>
+                        <p>Это для Инициации и Заключительного Огненного Ритуала. Белый цвет — символ чистоты, перерождения и нового начала. В этом облачении мы встретим рассвет и запечатаем трансформацию.</p>
+                    </div>
+                </div>
 
-            <h3 class="rt-subtitle">5️⃣ Общие рекомендации</h3>
-            <ul class="tag-list">
-                <li>Одежда должна быть свободной и из натуральных тканей — чтобы тело дышало</li>
-                <li>Возьми запасную сменную одежду на случай дождя или перепадов температуры</li>
-                <li>Не забудь личные гигиенические средства</li>
-            </ul>
+                <div class="amenity-row">
+                    <div class="amenity-photos single">
+                        <img src="media/residence/residence35.jpeg" alt="Общие рекомендации" loading="lazy" style="aspect-ratio:3/4;" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                    </div>
+                    <div class="amenity-text">
+                        <h3 class="rt-subtitle" style="margin-top:0;">5️⃣ Общие рекомендации</h3>
+                        <ul class="tag-list">
+                            <li>Одежда должна быть свободной и из натуральных тканей — чтобы тело дышало</li>
+                            <li>Возьми запасную сменную одежду на случай дождя или перепадов температуры</li>
+                            <li>Не забудь личные гигиенические средства</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             <h3 class="rt-subtitle">🔰 Главное</h3>
             <p class="rt-text">Мы идём встречать Огонь и Стихии. Нас ждут прохлада вершин, жар костра, ледяная вода и тепло внутреннего огня.</p>
@@ -611,27 +688,41 @@
         <div class="container" style="max-width:900px;">
             <h2>Готовы собраться в дорогу?</h2>
             <p>Если остались вопросы о проживании, питании или списке вещей — напишите нам напрямую, мы подскажем всё, что нужно перед поездкой.</p>
-            <a href="https://t.me" class="btn" target="_blank" rel="noopener noreferrer">Написать</a>
+            <div class="cta-actions">
+                <a href="https://t.me/ILVERA69" class="btn" target="_blank" rel="noopener noreferrer">Написать</a>
+                <div class="cta-call">
+                    <span>Или позвонить</span>
+                    <a href="tel:+79173482348">+7 917 348-23-48</a>
+                    <a href="tel:+79174134182">+7 917 413-41-82</a>
+                </div>
+            </div>
         </div>
     </section>
-
+    <!-- Вставка подвала сайта перед скриптами (с текстом внутри HTML) -->
     <footer>
-        <div class="container" style="max-width:1200px;">
+        <div class="container">
             <div class="social-icons">
-                <a href="https://t.me" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Написать мне лично">
+                <!-- Личка (самолетик) -->
+                <a href="https://t.me/ILVERA69" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Написать мне лично">
                     <i class="fab fa-telegram-plane"></i>
                 </a>
-                <a href="https://t.me" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Мой Телеграм-канал" style="background: #fff; color: var(--primary-color); border: 2px solid var(--accent-color);">
+                
+                <!-- КАНАЛ (Громкоговоритель/Новости) -->
+                <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Мой Телеграм-канал" style="background: #fff; color: var(--primary-color); border: 2px solid var(--accent-color);">
                     <i class="fas fa-bullhorn"></i>
-                </a>
-                <a href="https://whatsapp.com" class="social-link wa" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com" class="social-link inst" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </a>                
+                
+                <a href="https://whatsapp.com/dl/" class="social-link wa" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/sitdikova_ilvera" class="social-link inst" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="mailto:ilvera69@mail.ru" class="social-link mail" title="E-mail"><i class="fas fa-envelope"></i></a>
-                <a href="https://max.ru" class="social-link max" target="_blank" rel="noopener noreferrer" title="MAX"><span class="max-icon">MAX</span></a>
-                <a href="https://vk.ru" class="social-link vk" target="_blank" rel="noopener noreferrer" title="VK"><i class="fab fa-vk"></i></a>
-                <a href="https://youtube.com" class="social-link yt" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="tel:+79173482348" class="social-link phone" title="Позвонить: +7 917 348-23-48"><i class="fas fa-phone"></i></a>
+                <a href="tel:+79174134182" class="social-link phone" title="Позвонить: +7 917 413-41-82"><i class="fas fa-phone"></i></a>
+                <a href="https://max.ru/u/f9LHodD0cOJS7diLaHgIue6mxa4Qjx1kaxz4WjEKQkUqwhomlWcYtCnDxpA" class="social-link max" target="_blank" rel="noopener noreferrer" title="MAX"><span class="max-icon">MAX</span></a>
+                <a href="https://vk.ru/id177739125" class="social-link vk" target="_blank" rel="noopener noreferrer" title="VK"><i class="fab fa-vk"></i></a>
+                <a href="https://youtube.com/@mommy_dragon?si=_bSPuVhnY9Qzcek5" class="social-link yt" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
-            <p>&copy; 2026 Пространство практик и трансформации «ТриОгня». Все права защищены.</p>
+
+            <p>&copy; 2026 Пространство практик и трансформации «Ретриты». Все права защищены.</p>
         </div>
     </footer>
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Огненный ретрит на Южном Урале — 7 дней глубокого перезагрузочного путешествия к своим смыслам, энергии и внутренней опоре.">
-    <title>Огненный ретрит | ТриОгня</title>
+    <title>Огненный ретрит | Ретриты</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -390,6 +390,23 @@
             font-size: 1.05rem;
         }
 
+        .cta-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-call {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: left;
+        }
+
         .btn {
             display: inline-block;
             background-color: var(--primary-color);
@@ -410,15 +427,17 @@
             color: var(--primary-color);
         }
 
-        /* ---------- Footer ---------- */
+       /* --- Фирменный Footer на основе вашего CSS --- */
         footer {
             padding: 40px 0;
             text-align: center;
             background: #333;
             color: #888;
             font-size: 0.9rem;
+            margin-top: auto;
         }
 
+        /* Контейнер соцсетей */
         .social-icons {
             display: flex;
             justify-content: center;
@@ -428,6 +447,7 @@
             flex-wrap: wrap;
         }
 
+        /* Круглые кнопки иконок */
         .social-link {
             width: 45px;
             height: 45px;
@@ -442,22 +462,26 @@
             transition: all 0.3s ease;
         }
 
-        .social-link:hover {
-            transform: translateY(-5px);
+        /* Анимация при наведении */
+        .social-link:hover { 
+            transform: translateY(-5px); 
             color: #fff;
         }
-
+        
+        /* Единый акцентный hover в фирменной палитре */
         .social-link.tg:hover,
         .social-link.wa:hover,
         .social-link.inst:hover,
         .social-link.vk:hover,
         .social-link.yt:hover,
+        .social-link.phone:hover,
         .social-link.mail:hover { background: var(--accent-color); color: #2D2D2D; }
 
+        /* Кнопка MAX */
         .social-link.max { background: #20232a; border: 1px solid #3a3f4b; }
         .social-link.max:hover { background: var(--accent-color); }
         .social-link.max:hover .max-icon { color: #2D2D2D; }
-
+        
         .max-icon {
             font-family: "Arial Black", Arial, sans-serif;
             font-size: 0.65rem;
@@ -465,24 +489,13 @@
             letter-spacing: 0.08em;
             line-height: 1;
         }
-
-        @media (max-width: 860px) {
-            .triad-grid { grid-template-columns: 1fr; }
-            .compare-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 600px) {
-            .page-hero { padding: 40px 0 34px; }
-            .rt-section { padding: 44px 0; }
-            .stage { padding-left: 18px; }
-        }
     </style>
 </head>
 <body>
 
     <nav class="site-nav">
         <div class="container">
-            <a href="index.html" class="site-logo">ТриОгня</a>
+            <a href="index.html" class="site-logo">Ретриты</a>
             <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> На главную</a>
         </div>
     </nav>
@@ -683,27 +696,41 @@
         <div class="container">
             <h2>Готовы позволить себе сгореть, чтобы возродиться?</h2>
             <p>Места в группе ограничены — до 10 участников. Расскажем о деталях, датах и ответим на все вопросы в личной беседе.</p>
-            <a href="https://t.me" class="btn" target="_blank" rel="noopener noreferrer">Записаться</a>
+            <div class="cta-actions">
+                <a href="https://t.me/ILVERA69" class="btn" target="_blank" rel="noopener noreferrer">Написать</a>
+                <div class="cta-call">
+                    <span>Или позвонить</span>
+                    <a href="tel:+79173482348">+7 917 348-23-48</a>
+                    <a href="tel:+79174134182">+7 917 413-41-82</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
             <div class="social-icons">
-                <a href="https://t.me" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Написать мне лично">
+                <!-- Личка (самолетик) -->
+                <a href="https://t.me/ILVERA69" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Написать мне лично">
                     <i class="fab fa-telegram-plane"></i>
                 </a>
-                <a href="https://t.me" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Мой Телеграм-канал" style="background: #fff; color: var(--primary-color); border: 2px solid var(--accent-color);">
+                
+                <!-- КАНАЛ (Громкоговоритель/Новости) -->
+                <a href="https://t.me/+SUhxZLz2dvRjNGEy" class="social-link tg" target="_blank" rel="noopener noreferrer" title="Мой Телеграм-канал" style="background: #fff; color: var(--primary-color); border: 2px solid var(--accent-color);">
                     <i class="fas fa-bullhorn"></i>
-                </a>
-                <a href="https://whatsapp.com" class="social-link wa" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com" class="social-link inst" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </a>                
+                
+                <a href="https://whatsapp.com/dl/" class="social-link wa" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/sitdikova_ilvera" class="social-link inst" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="mailto:ilvera69@mail.ru" class="social-link mail" title="E-mail"><i class="fas fa-envelope"></i></a>
-                <a href="https://max.ru" class="social-link max" target="_blank" rel="noopener noreferrer" title="MAX"><span class="max-icon">MAX</span></a>
-                <a href="https://vk.ru" class="social-link vk" target="_blank" rel="noopener noreferrer" title="VK"><i class="fab fa-vk"></i></a>
-                <a href="https://youtube.com" class="social-link yt" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="tel:+79173482348" class="social-link phone" title="Позвонить: +7 917 348-23-48"><i class="fas fa-phone"></i></a>
+                <a href="tel:+79174134182" class="social-link phone" title="Позвонить: +7 917 413-41-82"><i class="fas fa-phone"></i></a>
+                <a href="https://max.ru/u/f9LHodD0cOJS7diLaHgIue6mxa4Qjx1kaxz4WjEKQkUqwhomlWcYtCnDxpA" class="social-link max" target="_blank" rel="noopener noreferrer" title="MAX"><span class="max-icon">MAX</span></a>
+                <a href="https://vk.ru/id177739125" class="social-link vk" target="_blank" rel="noopener noreferrer" title="VK"><i class="fab fa-vk"></i></a>
+                <a href="https://youtube.com/@mommy_dragon?si=_bSPuVhnY9Qzcek5" class="social-link yt" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
-            <p>&copy; 2026 Пространство практик и трансформации «ТриОгня». Все права защищены.</p>
+
+            <p>&copy; 2026 Пространство практик и трансформации «Ретриты». Все права защищены.</p>
         </div>
     </footer>
 
